@@ -73,16 +73,1196 @@
       <p class="hero-meta"><span>A long read — about an hour</span><span>Researched &amp; written August 2026</span><span>Every dated claim is linked to a source</span></p>
     </header>
 
-    <!-- CH1 -->
-    <!-- CH2 -->
-    <!-- CH3 -->
-    <!-- CH4 -->
-    <!-- CH5 -->
-    <!-- CH6 -->
-    <!-- CH7 -->
-    <!-- CH8 -->
-    <!-- CH9 -->
-    <!-- SOURCES -->
+    <section class="chapter" id="loop" aria-labelledby="loop-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 01</span>
+        <h2 id="loop-h">The loop itself</h2>
+        <p class="standfirst">Every continuously-improving product organisation, from Toyota's assembly line to a two-person SaaS, runs the same six-step cycle. The differences that matter are not which steps they run but three numbers: how often the loop turns, how much change rides in each turn, and how long the answer takes to come back.</p>
+      </div>
+
+      <div class="prose">
+        <p>Here is the loop, spelled out the way the teams who run it well actually run it. A <strong>hypothesis</strong>: a falsifiable claim, not a task — “if we let users invite teammates from the empty state, week-one retention rises,” not “add invites.” <strong>Instrument</strong>: decide before building what number will move and how you'll read it — a step that feels like bureaucracy and is actually the whole difference between learning and guessing. <strong>Build</strong> the smallest version that can test the claim. <strong>Ship</strong> it — behind a flag, to a slice of traffic, as a preview — so exposure is a dial, not a cliff. <strong>Measure</strong> against the number you named. Then, the step organisations skip most: <strong>decide</strong>. Winners roll out. Losers get reverted <em>and written down</em>, because a documented dead end is the only experiment result that keeps paying. Either way, what you learned re-enters the backlog as the next hypothesis, sharper than the last one.</p>
+      </div>
+
+      <figure class="viz wide reveal">
+        <div class="viz-card">
+          <p class="viz-title">The mechanism — and where it snaps</p>
+          <p class="viz-sub">Six stages every working loop runs, with the characteristic failure at each stage marked below the line.</p>
+          <svg viewBox="0 0 900 400" role="img" aria-label="Flow diagram of the iteration loop: hypothesis, instrument, build small, ship partially, measure, decide, with an arrow returning from decide to hypothesis. Each stage is annotated with its characteristic failure: shipping on vibes with no falsifiable claim; choosing the metric after launch; batches too big to attribute; release as a big-bang event; peeking and vanity metrics; and results ignored, with losers shipping anyway.">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--ink-3)"/>
+              </marker>
+              <marker id="arr-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/>
+              </marker>
+            </defs>
+            <!-- stations -->
+            <g font-size="13.5" text-anchor="middle">
+              <g>
+                <rect x="20" y="120" width="120" height="46" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <text x="80" y="148" fill="var(--ink)" font-weight="650">Hypothesis</text>
+              </g>
+              <g>
+                <rect x="168" y="120" width="120" height="46" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <text x="228" y="148" fill="var(--ink)" font-weight="650">Instrument</text>
+              </g>
+              <g>
+                <rect x="316" y="120" width="120" height="46" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <text x="376" y="141" fill="var(--ink)" font-weight="650">Build</text>
+                <text x="376" y="158" fill="var(--ink-2)" font-size="11.5">the smallest version</text>
+              </g>
+              <g>
+                <rect x="464" y="120" width="120" height="46" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <text x="524" y="141" fill="var(--ink)" font-weight="650">Ship</text>
+                <text x="524" y="158" fill="var(--ink-2)" font-size="11.5">flagged · partial</text>
+              </g>
+              <g>
+                <rect x="612" y="120" width="120" height="46" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <text x="672" y="148" fill="var(--ink)" font-weight="650">Measure</text>
+              </g>
+              <g>
+                <rect x="760" y="120" width="120" height="46" rx="10" fill="var(--accent-wash)" stroke="var(--accent)"/>
+                <text x="820" y="148" fill="var(--ink)" font-weight="650">Decide</text>
+              </g>
+            </g>
+            <!-- forward arrows -->
+            <g stroke="var(--ink-3)" stroke-width="1.75" fill="none">
+              <line x1="140" y1="143" x2="160" y2="143" marker-end="url(#arr)"/>
+              <line x1="288" y1="143" x2="308" y2="143" marker-end="url(#arr)"/>
+              <line x1="436" y1="143" x2="456" y2="143" marker-end="url(#arr)"/>
+              <line x1="584" y1="143" x2="604" y2="143" marker-end="url(#arr)"/>
+              <line x1="732" y1="143" x2="752" y2="143" marker-end="url(#arr)"/>
+            </g>
+            <!-- decide outcomes -->
+            <g font-size="12" text-anchor="start">
+              <line x1="820" y1="120" x2="820" y2="84" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#arr)"/>
+              <text x="700" y="66" fill="var(--good-text)" font-weight="650">win → roll out to 100%</text>
+              <line x1="852" y1="166" x2="852" y2="196" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#arr)"/>
+              <text x="668" y="216" fill="var(--ink-2)" font-weight="650">lose → revert, write it down</text>
+            </g>
+            <!-- return arc -->
+            <path d="M 790 166 C 700 250, 200 250, 84 170" fill="none" stroke="var(--accent)" stroke-width="2" class="loop-dash" marker-end="url(#arr-a)"/>
+            <text x="440" y="252" font-size="12.5" fill="var(--accent-ink)" text-anchor="middle" font-weight="650">either way, the learning re-enters the backlog</text>
+            <!-- failure annotations -->
+            <g font-size="11.5" text-anchor="middle" fill="var(--bad-text)">
+              <line x1="80" y1="286" x2="80" y2="306" stroke="var(--hairline)"/>
+              <text x="80" y="322">shipping on vibes:</text>
+              <text x="80" y="337">no falsifiable claim</text>
+              <line x1="228" y1="286" x2="228" y2="306" stroke="var(--hairline)"/>
+              <text x="228" y="322">metric chosen</text>
+              <text x="228" y="337">after launch</text>
+              <line x1="376" y1="286" x2="376" y2="306" stroke="var(--hairline)"/>
+              <text x="376" y="322">batch too big</text>
+              <text x="376" y="337">to attribute</text>
+              <line x1="524" y1="286" x2="524" y2="306" stroke="var(--hairline)"/>
+              <text x="524" y="322">release as</text>
+              <text x="524" y="337">big-bang event</text>
+              <line x1="672" y1="286" x2="672" y2="306" stroke="var(--hairline)"/>
+              <text x="672" y="322">peeking, underpowered,</text>
+              <text x="672" y="337">vanity metrics</text>
+              <line x1="820" y1="286" x2="820" y2="306" stroke="var(--hairline)"/>
+              <text x="820" y="322">results ignored:</text>
+              <text x="820" y="337">losers ship anyway</text>
+            </g>
+            <text x="450" y="380" font-size="12" fill="var(--ink-3)" text-anchor="middle">Below the line: the six places real loops break. Each failure is invisible from inside the team that has it.</text>
+          </svg>
+        </div>
+        <figcaption>The loop as high-velocity teams actually run it. Note that “Decide” — not “Ship” — is the stage with the accent: shipping is the middle of the loop, not the end.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h3>Three numbers govern everything</h3>
+        <p><strong>Cadence</strong> — how often the loop turns. <strong>Batch size</strong> — how much change rides in each turn. <strong>Feedback latency</strong> — how long between shipping and knowing. They are not independent: big batches force slow cadence (more to test, more to break, more to coordinate), and slow cadence forces big batches (a quarterly release train collects a quarter's worth of cargo). This is the vicious circle Donald Reinertsen dissected in <em>The Principles of Product Development Flow</em> (2009), and its inverse is the whole trick: small batches make each release boring, boring releases can happen constantly, and constant releases mean the answer to “did that work?” arrives while you still remember the question.</p>
+        <p>The compounding argument is arithmetic, not philosophy. A team that ships one big release a quarter gets four chances a year to be wrong and correct course. A team that ships daily gets over two hundred. Since — by the best published evidence — most product ideas simply don't work (across Microsoft's experimentation platform roughly <a href="https://hbr.org/2017/09/the-surprising-power-of-online-experiments">a third of ideas moved their target metrics</a>; at Google and Bing the success rate has been put at 10–20%), the fast team isn't just iterating more, it is <em>discovering its failures</em> at fifty times the rate — while each failure is fifty times smaller. Velocity, done right, is a risk-reduction strategy wearing a speed costume.</p>
+      </div>
+
+      <figure class="viz wide reveal">
+        <div class="viz-card">
+          <p class="viz-title">Why small batches win: same work, different risk</p>
+          <p class="viz-sub">Two teams ship the same six changes over the same period. One learns once; one learns six times.</p>
+          <svg viewBox="0 0 860 300" role="img" aria-label="Diagram comparing one large batch against six small batches over the same time period. The big batch gets a single late feedback point, with risk and unvalidated assumptions accumulating the whole time; a bad outcome loses the entire batch. The six small batches each get fast feedback, and a bad third batch loses only one-sixth of the work while later batches incorporate what was learned.">
+            <g font-size="12.5">
+              <!-- big batch row -->
+              <text x="20" y="52" fill="var(--ink)" font-weight="650" font-size="13.5">One big batch</text>
+              <rect x="20" y="66" width="600" height="26" rx="6" fill="var(--s1)" opacity="0.85"/>
+              <text x="320" y="83" fill="#ffffff" text-anchor="middle" font-size="12">build · build · build · build · build · build</text>
+              <circle cx="648" cy="79" r="8" fill="var(--bad-text)"/>
+              <text x="668" y="76" fill="var(--ink)" font-weight="650">feedback arrives once, late</text>
+              <text x="668" y="93" fill="var(--ink-2)">a miss loses the whole batch</text>
+              <line x1="20" y1="112" x2="620" y2="112" stroke="var(--hairline)"/>
+              <text x="20" y="130" fill="var(--bad-text)" font-size="11.5">unvalidated assumptions accumulate the entire time →</text>
+
+              <!-- small batches row -->
+              <text x="20" y="182" fill="var(--ink)" font-weight="650" font-size="13.5">Six small batches</text>
+              <g>
+                <rect x="20"  y="196" width="88" height="26" rx="6" fill="var(--s1)" opacity="0.85"/>
+                <rect x="122" y="196" width="88" height="26" rx="6" fill="var(--s1)" opacity="0.85"/>
+                <rect x="224" y="196" width="88" height="26" rx="6" fill="var(--bad-text)" opacity="0.9"/>
+                <rect x="326" y="196" width="88" height="26" rx="6" fill="var(--s1)" opacity="0.85"/>
+                <rect x="428" y="196" width="88" height="26" rx="6" fill="var(--s1)" opacity="0.85"/>
+                <rect x="530" y="196" width="88" height="26" rx="6" fill="var(--s1)" opacity="0.85"/>
+              </g>
+              <g fill="var(--accent)">
+                <circle cx="112" cy="209" r="5"/>
+                <circle cx="214" cy="209" r="5"/>
+                <circle cx="316" cy="209" r="5"/>
+                <circle cx="418" cy="209" r="5"/>
+                <circle cx="520" cy="209" r="5"/>
+                <circle cx="622" cy="209" r="5"/>
+              </g>
+              <text x="268" y="243" fill="var(--bad-text)" text-anchor="middle" font-size="11.5">batch 3 fails — one sixth lost</text>
+              <text x="472" y="243" fill="var(--good-text)" text-anchor="middle" font-size="11.5">batches 4–6 built on what 1–3 taught</text>
+              <text x="648" y="200" fill="var(--ink)" font-weight="650">feedback after every batch</text>
+              <text x="648" y="217" fill="var(--ink-2)">risk resets to zero six times</text>
+              <text x="20" y="278" fill="var(--ink-3)" font-size="12">Orange dots mark feedback. The second team ships the same total work — it just never bets more than a sixth of it on one guess.</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>The batch-size argument, after Reinertsen's <em>Principles of Product Development Flow</em> (2009) and the IMVU/Etsy practice described in <a href="#timeline">chapter 2</a>.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h3>Feedback latency is the silent killer</h3>
+        <p>Cadence and batch size are visible on any team dashboard. Latency hides. It is the sum of every delay between “it's live” and “we know”: the analytics event that wasn't wired up, the dashboard nobody owns, the metric that needs four weeks of data to mean anything, the review meeting that happens monthly. A loop with a fast cadence and a six-week feedback latency is not a fast loop — it is a slow loop with busy scenery, shipping change after change <em>into the dark</em>, each new decision made before the last one's results arrive. When IMVU built its continuous-deployment pipeline in 2009, the celebrated number was <a href="https://timothyfitz.com/2009/02/10/continuous-deployment-at-imvu-doing-the-impossible-fifty-times-a-day/">fifty deploys a day</a>; the load-bearing number was nine minutes — the total time from commit to knowing, via a wall of automated tests and a “cluster immune system” that reverted bad deploys on its own. Toyota's andon cord (<a href="#timeline">chapter 2</a>) is the same design in cotton and steel: the point was never stopping the line, it was that a defect became known <em>seconds</em> after it existed, by the person best placed to see it.</p>
+        <h3>Where the loop breaks</h3>
+        <p>The diagram above marks the six characteristic fractures, and they deserve spelling out, because every one of them looks like diligence from the inside. Teams ship without a hypothesis and call it agility. They instrument after launch and call it pragmatism — then discover the “before” data doesn't exist. They batch a redesign, a refactor and three features into one release and call it efficiency, then can't say which change moved the number. They treat release day as an event with a war room, which guarantees releases stay rare. They peek at results daily and stop the moment significance flickers — a practice that, as <a href="#smallshop">chapter 8</a> shows, manufactures false positives on demand. And — the quietest failure — they run honest experiments, get a clear loser, and ship it anyway, because the sprint had momentum, the sunk cost was real, and nobody's job was to say stop. Ron Kohavi's teams saw this often enough to give the antidote a name: the experiment result is a <em>decision</em>, not a report.</p>
+        <p>One more break deserves its own sentence, because 2012 gave it a price tag: the loop assumes deploys themselves are boring, automated and reversible, and when they aren't — when a manual deploy reaches seven of eight servers and a stale flag wakes up dead code — you get <a href="https://specbranch.com/posts/knight-capital/">Knight Capital's $440M in 45 minutes</a>. The loop's speed is only ever as safe as its brakes.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="timeline" aria-labelledby="timeline-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 02</span>
+        <h2 id="timeline-h">A century of shrinking loops</h2>
+        <p class="standfirst">The iteration loop was not invented by a startup. It was invented in a factory in 1924, crossed the Pacific twice, fought the waterfall for thirty years, and only reached software's mainstream when deploying got cheap enough to do daily. Here is the whole lineage, dated and sourced — what each step actually changed, not just what it renamed.</p>
+        <p class="standfirst" style="margin-top:1rem; font-size:0.9975rem;">A note on shape: this history runs in braided threads, not a single file. The factory thread and the software thread overlap for decades before they finally merge in 2009. The eras below follow the braid.</p>
+      </div>
+
+      <nav class="era-nav reveal" aria-label="Jump to an era">
+        <a href="#era-measure">1919 · Measure the process</a>
+        <a href="#era-factory">1948 · The factory learns</a>
+        <a href="#era-waterfall">1970 · Against the waterfall</a>
+        <a href="#era-deploy">2009 · Deploys get cheap</a>
+        <a href="#era-experiment">2000 · The experiment machine</a>
+        <a href="#era-platform">2019 · Paved roads</a>
+        <a href="#era-ai">2021 · The loop meets AI</a>
+      </nav>
+
+      <div class="timeline">
+        <div class="tl-spine" aria-hidden="true"><div class="tl-fill"></div></div>
+
+        <div class="tl-era" id="era-measure">
+          <span class="era-span">1919 – 1951</span>
+          <h3>Measure the process</h3>
+          <p>Statistics escapes the university and walks onto the factory floor. The core idea of everything that follows appears here: treat what you make as the output of a process, measure it, and cycle.</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1923</span>
+          <h4>Claude Hopkins publishes <em>Scientific Advertising</em></h4>
+          <p>Key-coded coupons let Hopkins trace every response to the exact ad that produced it, testing headlines and offers against each other. The first working description of split testing — in marketing, not software.</p>
+          <p class="tl-shift">Advertising spend became measurable. “Test, don't argue” enters commercial practice.</p>
+          <p class="tl-src">Source: <a href="https://en.wikipedia.org/wiki/Scientific_Advertising">Scientific Advertising (1923)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">May 1924</span>
+          <h4>Walter Shewhart draws the first control chart</h4>
+          <p>On May 16, 1924, at Western Electric, Shewhart hands his boss a one-page memo containing the first control chart — separating “assignable-cause” variation you can fix from “chance-cause” variation you must live with. His 1939 book then bends quality control into a circle: specification → production → inspection “must go in a circle instead of in a straight line.” That circle is the ancestor of every iteration loop in this piece.</p>
+          <p class="tl-shift">A process became something you could read, stabilise, and improve — not just inspect afterwards.</p>
+          <p class="tl-src">Sources: <a href="https://asq.org/about-asq/honorary-members/shewhart">ASQ on Shewhart</a> · <a href="https://www.tandfonline.com/doi/full/10.1080/00224065.2023.2282926">100th anniversary of the control chart (2023)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1925 – 1935</span>
+          <h4>R.&nbsp;A. Fisher formalises the randomised experiment</h4>
+          <p>Working on crop trials at Rothamsted, Fisher establishes randomisation, replication and the null hypothesis — <em>Statistical Methods for Research Workers</em> (1925), <em>The Design of Experiments</em> (1935). Every A/B test ever run is downstream of these field plots.</p>
+          <p class="tl-shift">Causal claims — “this change caused that result” — became statistically defensible.</p>
+          <p class="tl-src">Sources: <a href="https://www.britannica.com/biography/Ronald-Aylmer-Fisher">Britannica</a> · <a href="https://en.wikipedia.org/wiki/The_Design_of_Experiments">The Design of Experiments</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1950</span>
+          <h4>Deming lectures Japan; the wheel starts turning</h4>
+          <p>At JUSE's invitation, W. Edwards Deming teaches statistical quality control to Japanese engineers, then — at Hakone in August 1950 — to executives representing most of Japan's industrial capital. Around 1951, Japanese executives rework his “Deming wheel” into PDCA (Plan–Do–Check–Act). Deming himself preferred PDSA: “check,” he argued, implies mere verification, where “study” demands learning. (The quote everyone attributes to him — “In God we trust; all others must bring data” — is apocryphal: <a href="https://quoteinvestigator.com/2017/12/29/god-data/">no evidence he said it</a>.)</p>
+          <p class="tl-shift">The improvement cycle became a named, teachable management method — and an export.</p>
+          <p class="tl-src">Sources: <a href="https://deming.org/speech-by-dr-deming-to-japanese-business-leaders-in-1950/">Deming Institute, 1950 speech</a> · <a href="https://deming.org/wp-content/uploads/2020/06/PDSA_History_Ron_Moen.pdf">Moen, “Foundation and History of the PDSA Cycle”</a></p>
+        </div>
+
+        <div class="tl-era" id="era-factory">
+          <span class="era-span">1948 – 1988</span>
+          <h3>The factory learns</h3>
+          <p>Toyota turns the cycle into a production system: small batches, pull, and — crucially — a cord any worker can pull to stop the whole line. Software will spend the next fifty years rediscovering each piece.</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1948 →</span>
+          <h4>Taiichi Ohno builds the Toyota Production System</h4>
+          <p>From 1948 Ohno assembles just-in-time flow, kanban pull signals, and the andon cord — a line-stop cord that empowers <em>any</em> worker to halt production on spotting a defect, so defects surface immediately instead of accumulating downstream. The system runs for decades before being codified in Ohno's 1978 book (English translation 1988).</p>
+          <p class="tl-shift">Small batches and worker-initiated stop-the-line: fast feedback beat economies of scale inside the world's most scale-driven industry.</p>
+          <p class="tl-src">Sources: <a href="https://artoflean.com/reference/taiichi-ohno/">Art of Lean on Ohno</a> · <a href="https://www.vorne.com/learn/key-concepts/andon/origins/">Andon origins</a> · <a href="https://www.oreilly.com/library/view/toyota-production-system/9781000056488/xhtml/04_Copyright01.xhtml">1978/1988 publication record</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1986</span>
+          <h4>Masaaki Imai exports <em>kaizen</em></h4>
+          <p><em>Kaizen: The Key to Japan's Competitive Success</em> carries continuous improvement to Western management — everyone, every day, improving the process in small steps. It is Imai's book, not Ohno's, that makes “kaizen” a global word.</p>
+          <p class="tl-src">Source: <a href="https://archive.org/details/kaizen00masa">Imai, Kaizen (1986)</a></p>
+        </div>
+
+        <div class="tl-era" id="era-waterfall">
+          <span class="era-span">1970 – 2001</span>
+          <h3>Software against the waterfall</h3>
+          <p>Software spends three decades arguing with a diagram — one that its own author had warned against. The argument ends at a ski lodge in Utah.</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Aug 1970</span>
+          <h4>Royce publishes the “waterfall” paper — as a warning</h4>
+          <p>Winston Royce's “Managing the Development of Large Software Systems” contains the famous single-pass stage diagram. What the citers forgot: Royce never uses the word “waterfall,” and writes directly under the diagram, <em>“I believe in this concept, but the implementation described above is risky and invites failure”</em> — recommending instead that you build it twice. The most influential software-process paper of the century was influential for the diagram its author argued against.</p>
+          <p class="tl-src">Source: <a href="https://www.praxisframework.org/files/royce1970.pdf">Royce 1970 (PDF)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1986 – 88</span>
+          <h4>Boehm's spiral model makes risk drive iteration</h4>
+          <p>Barry Boehm's spiral model (ACM SIGSOFT 1986; expanded in <em>IEEE Computer</em>, May 1988) replaces the single pass with repeating cycles: objectives → risk analysis → prototype → plan the next loop. The same January, Takeuchi and Nonaka's HBR paper “The New New Product Development Game” imports the rugby scrum metaphor from Japanese manufacturing.</p>
+          <p class="tl-shift">Iteration became a legitimate process model inside institutions that had mandated the waterfall.</p>
+          <p class="tl-src">Sources: <a href="https://dl.acm.org/doi/10.1145/12944.12948">Boehm 1986</a> · <a href="https://www.cse.msu.edu/~cse435/Homework/HW3/boehm.pdf">1988 version (PDF)</a> · <a href="https://hbr.org/1986/01/the-new-new-product-development-game">Takeuchi &amp; Nonaka 1986</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1993 – 95</span>
+          <h4>Scrum: first team, first paper</h4>
+          <p>Jeff Sutherland runs the first Scrum team at Easel Corporation in 1993; Ken Schwaber presents “SCRUM Development Process” at OOPSLA '95 in Austin — the framework's first formal publication. Sprints put a fixed clock on the loop.</p>
+          <p class="tl-src">Source: <a href="http://www.jeffsutherland.org/oopsla/schwapub.pdf">Schwaber, OOPSLA '95 (PDF)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">1996 – 99</span>
+          <h4>Extreme Programming assembles the modern toolkit</h4>
+          <p>On Chrysler's C3 payroll project, Kent Beck combines pair programming, test-driven development, small releases, an on-site customer — and continuous integration — into a single named discipline, published as <em>Extreme Programming Explained</em> (October 1999). Nearly every practice in today's delivery pipeline is rehearsed here first.</p>
+          <p class="tl-shift">Short iterations plus automated tests became a system you could adopt, not a temperament you had to have.</p>
+          <p class="tl-src">Sources: <a href="https://martinfowler.com/bliki/C3.html">Fowler on C3</a> · <a href="https://en.wikipedia.org/wiki/Chrysler_Comprehensive_Compensation_System">C3 project</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Sept 2000</span>
+          <h4>Fowler &amp; Foemmel write down Continuous Integration</h4>
+          <p>The martinfowler.com article (September 10, 2000) describes fully automated build-and-test runs many times a day. CruiseControl, the first open-source CI server, follows from ThoughtWorks on March 30, 2001; Kohsuke Kawaguchi's Hudson (2005) — forked as Jenkins in February 2011 after Oracle claimed the trademark — makes CI the default everywhere.</p>
+          <p class="tl-shift">“Does the build pass?” became a machine's job, answered in minutes, hundreds of times a day.</p>
+          <p class="tl-src">Sources: <a href="https://martinfowler.com/articles/originalContinuousIntegration.html">original CI article</a> · <a href="https://cruisecontrol.sourceforge.net/">CruiseControl</a> · <a href="https://en.wikipedia.org/wiki/Jenkins_(software)">Jenkins fork</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Feb 2001</span>
+          <h4>Seventeen people at a ski lodge write the Agile Manifesto</h4>
+          <p>February 11–13, 2001, at Snowbird, Utah: Beck, Fowler, Sutherland, Schwaber, Cunningham, Martin and eleven others distil their competing methods into four values — working software over comprehensive documentation, responding to change over following a plan. The word “agile” wins; the argument with the waterfall is, culturally, over.</p>
+          <p class="tl-src">Sources: <a href="https://agilemanifesto.org/history.html">agilemanifesto.org/history</a> · <a href="https://martinfowler.com/articles/agileStory.html">Fowler, “Writing The Agile Manifesto”</a></p>
+        </div>
+
+        <div class="tl-era" id="era-deploy">
+          <span class="era-span">2009 – 2012</span>
+          <h3>Deploys get cheap</h3>
+          <p>Agile shortened the build; the release was still a quarterly ceremony. In a two-year burst, a photo-sharing site, a virtual-goods company and a craft marketplace prove the release can be a non-event that happens fifty times a day — and DevOps gets its name.</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Feb 2009</span>
+          <h4>IMVU ships fifty times a day</h4>
+          <p>Timothy Fitz's post “Continuous Deployment at IMVU: Doing the impossible fifty times a day” documents the machinery: thousands of automated tests on a build cluster, a nine-minute pipeline, and a “cluster immune system” that auto-reverts bad deploys. Eric Ries generalises the practice on his Startup Lessons Learned blog that June.</p>
+          <p class="tl-shift">Deploying stopped being the risky event. <em>Not</em> deploying — accumulating untested change — became the risky event.</p>
+          <p class="tl-src">Sources: <a href="https://timothyfitz.com/2009/02/10/continuous-deployment-at-imvu-doing-the-impossible-fifty-times-a-day/">Fitz, Feb 2009</a> · <a href="http://www.startuplessonslearned.com/2009/06/why-continuous-deployment.html">Ries, June 2009</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">June 2009</span>
+          <h4>“10+ Deploys Per Day” at Velocity — DevOps ignites</h4>
+          <p>June 23, 2009: John Allspaw and Paul Hammond of Flickr show a room of operations engineers one company where dev and ops cooperate — shared tooling, one-button deploys, feature flags, blameless culture — and ship more than ten times a day. Patrick Debois, watching remotely, organises the first DevOpsDays in Ghent that October 30–31; the conference hashtag, #devops, names the movement.</p>
+          <p class="tl-shift">Dev-versus-ops stopped being a law of nature. The wall between “build it” and “run it” came down, and the loop closed around production.</p>
+          <p class="tl-src">Sources: <a href="https://www.kitchensoap.com/2009/06/23/slides-for-velocity-talk-2009/">Allspaw's slides</a> · <a href="https://www.youtube.com/watch?v=LdOe18KhtT4">the talk (video)</a> · <a href="https://legacy.devopsdays.org/events/2009-ghent/">DevOpsDays Ghent 2009</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Dec 2009</span>
+          <h4>Flickr describes flag-driven development</h4>
+          <p>Ross Harmes's “Flipping Out” on the Flickr dev blog: no branches, everything on trunk, pushed to production several times a day, with “flags” and per-user “flippers” controlling exposure. The founding public description of feature flags — the mechanism that separates <em>deploying code</em> from <em>releasing features</em>. Martin Fowler's FeatureToggle bliki entry follows in October 2010; LaunchDarkly productises the pattern in 2014.</p>
+          <p class="tl-src">Sources: <a href="https://code.flickr.net/2009/12/02/flipping-out/">“Flipping Out” (2009)</a> · <a href="https://martinfowler.com/articles/feature-toggles.html">Hodgson's canonical rewrite (2017)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">May 2010</span>
+          <h4>Etsy's Deployinator: one button, two minutes</h4>
+          <p>Etsy's “Quantum of Deployment” post describes cutting deploys from an hour of coordinated effort to one person pressing one button, under two minutes. By 2015 Etsy publishes a rate of roughly 40 deploys a day. John Allspaw, now at Etsy, adds the cultural half in May 2012: “Blameless PostMortems and a Just Culture” — engineers closest to failure explain it without fear, so the organisation actually learns.</p>
+          <p class="tl-shift">Continuous deployment acquired its culture: small changes, honest postmortems, no scapegoats.</p>
+          <p class="tl-src">Sources: <a href="https://codeascraft.com/2010/05/20/quantum-of-deployment/">Quantum of Deployment</a> · <a href="https://codeascraft.com/2015/02/20/re-introducing-deployinator-now-as-a-gem/">~40 deploys/day (2015)</a> · <a href="https://www.codeascraft.com/2012/05/22/blameless-postmortems/">Blameless PostMortems (2012)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">July 2010</span>
+          <h4><em>Continuous Delivery</em> gives the pipeline its book</h4>
+          <p>Jez Humble and David Farley's book (July 27, 2010) names the deployment pipeline: every commit builds, tests and stages itself for a one-button release. It becomes the reference the next decade of tooling is built to satisfy.</p>
+          <p class="tl-src">Source: <a href="https://martinfowler.com/books/continuousDelivery.html">Fowler's book page</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Sept 2011</span>
+          <h4><em>The Lean Startup</em> names the loop for everyone else</h4>
+          <p>Eric Ries's book (September 13, 2011) packages continuous deployment, split testing and lean manufacturing into build–measure–learn, validated learning, and the MVP. Suddenly the loop is not an engineering practice but a company-design principle — and a bestseller.</p>
+          <p class="tl-shift">The loop escaped engineering. Founders and executives began to describe their whole business as an experiment cycle.</p>
+          <p class="tl-src">Source: <a href="https://en.wikipedia.org/wiki/The_Lean_Startup">The Lean Startup (2011)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Aug 2012</span>
+          <h4>Knight Capital: the $440M counterexample</h4>
+          <p>August 1, 2012: a manual deploy to eight order-routing servers misses one, a repurposed feature flag activates eight-year-old dead code, and Knight Capital loses roughly $440M in 45 minutes. The canonical demonstration of why deploy automation and flag hygiene are not optional — cited in every continuous-delivery argument since.</p>
+          <p class="tl-src">Sources: <a href="https://specbranch.com/posts/knight-capital/">technical post-mortem</a> · <a href="https://www.henricodolfing.ch/en/case-study-4-the-440-million-software-error-at-knight-capital/">case study</a></p>
+        </div>
+
+        <div class="tl-era" id="era-experiment">
+          <span class="era-span">2000 – 2020</span>
+          <h3>The experiment machine</h3>
+          <p>Running in parallel with the deploy revolution: the industrialisation of the A/B test. What Fisher did for crops, a handful of platform teams do for software — and discover, uncomfortably, that most product ideas don't work.</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2000</span>
+          <h4>Google runs its first A/B test</h4>
+          <p>An experiment on how many search results to show per page — famously confounded by page-load latency (Kohavi and Thomke date it to February 27, 2000). Within a decade Google builds infrastructure to run experiments in overlapping layers, so thousands can run simultaneously on the same traffic.</p>
+          <p class="tl-src">Sources: <a href="https://hbr.org/2017/09/the-surprising-power-of-online-experiments">Kohavi &amp; Thomke, HBR 2017</a> · <a href="https://research.google/pubs/overlapping-experiment-infrastructure-more-better-faster-experimentation/">Tang et al., KDD 2010</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2006</span>
+          <h4>Amazon's shopping-cart recommendations beat the HiPPO</h4>
+          <p>Greg Linden's blog post recounts the founding folk tale of online experimentation: he prototyped recommendations on Amazon's cart page, a senior VP forbade it as a checkout distraction, Linden ran the test anyway — and the feature won “by such a wide margin that not having it live was costing Amazon a noticeable chunk of change.” The Highest Paid Person's Opinion lost to a measurement.</p>
+          <p class="tl-shift">Authority stopped settling product arguments. At experiment-driven companies, the test became the tiebreaker.</p>
+          <p class="tl-src">Source: <a href="http://glinden.blogspot.com/2006/04/early-amazon-shopping-cart.html">Linden, “Early Amazon: Shopping cart recommendations” (2006)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2006</span>
+          <h4>Kohavi founds Microsoft's Experimentation Platform</h4>
+          <p>Ron Kohavi's ExP team industrialises controlled experiments at Microsoft. By the 2013 KDD paper, Bing alone runs over 200 concurrent experiments on any given day — and the platform's most cited finding is humbling: only about a third of tested ideas improve the metrics they were designed to improve.</p>
+          <p class="tl-shift">Experimentation became infrastructure — and produced hard evidence that expert intuition about what users want is wrong most of the time.</p>
+          <p class="tl-src">Sources: <a href="https://exp-platform.com/">exp-platform.com</a> · <a href="https://www.exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf">Kohavi et al., KDD 2013 (PDF)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Mar 2009</span>
+          <h4>41 shades of blue; a designer resigns</h4>
+          <p>Doug Bowman, Google's first visual-design lead, leaves — publicly, in “Goodbye, Google”: a team “couldn't decide between two blues, so they're testing 41 shades between each blue”; he'd been asked to prove whether a border should be 3, 4 or 5 pixels wide. The emblem of the tension between measurement and design conviction, still argued about today. (Google folklore later valued the winning blue at ~$200M a year in ad revenue; treat that figure as lore, not audit.)</p>
+          <p class="tl-src">Sources: <a href="https://stopdesign.com/journal/2009/03/20/goodbye-google.html">Bowman, “Goodbye, Google” (2009)</a> · <a href="https://zeldman.com/2009/03/20/41-shades-of-blue/">Zeldman's reaction</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2007 – 16</span>
+          <h4>Growth teams and the metric-first org</h4>
+          <p>Chamath Palihapitiya's growth team at Facebook (from 2007) reorganises product work around one retention insight — get a new user to 7 friends in 10 days. Sean Ellis coins “growth hacker” in July 2010; Dropbox's referral program (500MB for both sides) lifts signups 60% in Drew Houston's 2010 account. By May 2016, OpenView's Blake Bartlett names the successor model “product-led growth”: the product itself, instrumented end to end, is the funnel.</p>
+          <p class="tl-src">Sources: <a href="https://ryangum.com/chamath-palihapitiya-how-we-put-facebook-on-the-path-to-1-billion-users/">Palihapitiya's account</a> · <a href="https://www.startup-marketing.com/2010/07/">Ellis, July 2010</a> · <a href="https://openviewpartners.com/blog/inventing-product-led-growth/">OpenView's PLG origin story</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Sept 2017</span>
+          <h4>The $100M experiment nobody wanted to run</h4>
+          <p>Kohavi and Thomke's HBR article tells the story that sells experimentation to executives: a Bing engineer's ad-headline idea sat in the backlog for months, rated low priority — until one engineer ran it as a test. It raised revenue 12%, worth over $100M a year: the best revenue idea in Bing's history, and its own product team had shelved it.</p>
+          <p class="tl-shift">The argument inverted: the expensive thing is not running bad experiments — it is <em>not running</em> the good one you misjudged.</p>
+          <p class="tl-src">Source: <a href="https://hbr.org/2017/09/the-surprising-power-of-online-experiments">HBR, Sept–Oct 2017</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2018</span>
+          <h4>DORA's <em>Accelerate</em>: velocity gets its evidence base</h4>
+          <p>Nicole Forsgren, Jez Humble and Gene Kim publish <em>Accelerate</em> (March 2018), distilling years of State of DevOps surveys into four measurable delivery metrics — deployment frequency, lead time, time to restore, change-failure rate — and the statistical finding that speed and stability are not a trade-off: elite performers get both. Google Cloud acquires DORA that December.</p>
+          <p class="tl-shift">“We should ship faster” stopped being a vibe and became a benchmarked, peer-reviewed claim with numbers attached.</p>
+          <p class="tl-src">Sources: <a href="https://itrevolution.com/product/accelerate/">Accelerate (2018)</a> · <a href="https://dora.dev/news/dora-joins-google-cloud/">DORA joins Google Cloud</a> · <a href="https://www.globenewswire.com/news-release/2013/03/26/1229773/0/en/DevOps-Adoption-Accelerating-Puppet-Labs-Survey-Results-Indicate.html">first State of DevOps report (2013)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Mar 2020</span>
+          <h4>The experimentation textbook lands</h4>
+          <p>Kohavi, Tang and Xu publish <em>Trustworthy Online Controlled Experiments</em> (Cambridge, March 2020) — the field's standard reference, from the people who ran the platforms at Microsoft, Google and LinkedIn. The craft is now a curriculum.</p>
+          <p class="tl-src">Source: <a href="https://experimentguide.com/">experimentguide.com</a></p>
+        </div>
+
+        <div class="tl-era" id="era-platform">
+          <span class="era-span">2019 – 2022</span>
+          <h3>Paved roads</h3>
+          <p>When every team runs its own loop, the loop's plumbing becomes a product. Platform engineering makes the golden path someone's actual job.</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2019 – 21</span>
+          <h4>Team Topologies, Backstage, SPACE</h4>
+          <p>Skelton and Pais's <em>Team Topologies</em> (September 2019) names the platform team whose product is other teams' velocity. Spotify open-sources Backstage, its internal developer portal, in March 2020 (CNCF sandbox that September). Forsgren and colleagues' SPACE framework (ACM Queue, March 2021) pushes back on single-number developer-productivity metrics.</p>
+          <p class="tl-src">Sources: <a href="https://teamtopologies.com/book">Team Topologies</a> · <a href="https://engineering.atspotify.com/2021/03/happy-birthday-backstage-spotifys-biggest-open-source-project-grows-up-fast">Backstage's first year</a> · <a href="https://queue.acm.org/detail.cfm?id=3454124">SPACE (2021)</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2022</span>
+          <h4>“Platform engineering” peaks</h4>
+          <p>The term enters Gartner's 2022 Hype Cycle for Emerging Technologies, with a projection that 80% of large engineering organisations will run platform teams by 2026. Much of it is DevOps-era practice renamed — but the underlying shift is real: self-service infrastructure as an internal product, with the loop's tooling maintained centrally so product teams only rent it.</p>
+          <p class="tl-src">Source: <a href="https://www.gartner.com/en/infrastructure-and-it-operations-leaders/topics/platform-engineering">Gartner on platform engineering</a></p>
+        </div>
+
+        <div class="tl-era" id="era-ai">
+          <span class="era-span">2021 → today</span>
+          <h3>The loop meets AI</h3>
+          <p>Generation gets cheap; verification becomes the bottleneck. The loop starts running at the level of the individual change — proposed, tested and shipped with machine help — and AI products bring a new kind of test suite with them.</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2021 – 22</span>
+          <h4>Copilot, then ChatGPT</h4>
+          <p>GitHub Copilot's technical preview (June 2021) and general availability (June 21, 2022) put code generation inside the editor. ChatGPT (November 30, 2022) reaches roughly 100 million users in two months — and resets expectations for how fast a product can ship: continuously updated models, visible weekly change.</p>
+          <p class="tl-src">Sources: <a href="https://github.blog/news-insights/product-news/github-copilot-is-generally-available-to-all-developers/">Copilot GA</a> · <a href="https://techcrunch.com/2025/11/30/chatgpt-launched-three-years-ago-today/">ChatGPT's launch, revisited</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">Mar 2023</span>
+          <h4>Evals become the new regression suite</h4>
+          <p>OpenAI open-sources Evals alongside GPT-4 (March 14, 2023). Three months later, Zheng et al.'s “Judging LLM-as-a-Judge” paper formalises using a strong model to grade another model's output — ~85% agreement with human raters, higher than humans agree with each other — while documenting the judge's own biases. For AI products, evals start playing the role unit tests played for CI: the automated gate the loop closes around.</p>
+          <p class="tl-shift">Model behaviour — previously vibes — became a number you could regression-test in CI.</p>
+          <p class="tl-src">Sources: <a href="https://techcrunch.com/2023/03/14/with-evals-openai-hopes-to-crowdsource-ai-model-testing/">OpenAI Evals</a> · <a href="https://arxiv.org/abs/2306.05685">Zheng et al., 2023</a></p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-year">2024 – 25</span>
+          <h4>Agents enter the pipeline</h4>
+          <p>Cognition's Devin demo (March 2024) overpromises and gets publicly debunked — but the category it announces arrives anyway: Claude Code ships as a research preview February 24, 2025; OpenAI's Codex agent launches May 16, 2025; GitHub's Copilot coding agent takes issue assignments from May 19, 2025. All of them, notably, ship draft pull requests a human must approve. By September 2025, OpenAI pays $1.1B for the experimentation platform Statsig — the loop's newest workers, and its measurement layer, bought by the same company in the same year.</p>
+          <p class="tl-shift">Writing the change became cheap. Deciding whether it's good — tests, evals, review — became the scarce resource.</p>
+          <p class="tl-src">Sources: <a href="https://www.anthropic.com/news/claude-3-7-sonnet">Claude Code preview</a> · <a href="https://openai.com/index/introducing-codex/">Codex</a> · <a href="https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/">Copilot coding agent</a> · <a href="https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/">OpenAI × Statsig</a></p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>What actually changed each time</h3>
+        <p>Strip the names away and the century has one plot: <strong>each era made one part of the loop dramatically cheaper, and the practice reorganised around the new cheap thing.</strong> Shewhart made measurement cheap on the factory floor. Toyota made small batches cheap. XP and CI made integration cheap. Flickr, IMVU and Etsy made <em>deployment</em> cheap. The experimentation platforms made <em>causal measurement</em> cheap. The AI era is making <em>generation</em> cheap — which is why, for the first time, the bottleneck is moving to judgment: deciding what to build and whether what was built is good. Every chapter that follows is about some team navigating whichever scarcity their era left them.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="trends" aria-labelledby="trends-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 03</span>
+        <h2 id="trends-h">What is moving right now</h2>
+        <p class="standfirst">Four measurable shifts define the current decade of the loop: release cadence collapsed, experiment volume exploded, privacy regulation rebuilt the measurement layer, and AI raised throughput while measurably denting stability. Each claim below is either sourced to published data or plainly labelled as assertion.</p>
+      </div>
+
+      <div class="stat-strip reveal">
+        <div class="stat">
+          <div class="stat-value">269 → 4</div>
+          <div class="stat-label">weeks between browser releases: the IE6→IE7 gap (2001–06) vs Chrome's cycle since Q3 2021</div>
+          <div class="stat-src"><a href="https://blog.chromium.org/2021/03/speeding-up-release-cycle.html">Chromium Blog, Mar 2021</a></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">973×</div>
+          <div class="stat-label">more frequent deployments by elite teams vs low performers (≈1,460/yr vs ≈1.5/yr)</div>
+          <div class="stat-src"><a href="https://dora.dev/research/2021/dora-report/">DORA State of DevOps, 2021</a></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">10,000+</div>
+          <div class="stat-label">experiments per year each at Microsoft, Amazon, Google, Meta and Booking.com</div>
+          <div class="stat-src"><a href="https://hbr.org/2017/09/the-surprising-power-of-online-experiments">Kohavi &amp; Thomke, HBR 2017</a></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">−7.2%</div>
+          <div class="stat-label">estimated delivery stability per 25% increase in AI adoption</div>
+          <div class="stat-src"><a href="https://dora.dev/research/2024/dora-report/">DORA report, 2024</a></div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Cadence collapsed — and it is measured, not asserted</h3>
+        <p>The clearest time series in the whole field is the browser you're reading this in. Internet Explorer went five years between IE6 (2001) and IE7 (2006). Firefox switched to a six-week rapid-release train in 2011; Chrome ran six-week cycles from 2010 and <a href="https://blog.chromium.org/2021/03/speeding-up-release-cycle.html">announced the move to four weeks in March 2021</a> — “as we have improved our testing and release processes… we realized we could shorten our release cycle.” The same collapse shows up across the industry in DORA's decade of State of DevOps data, the field's best longitudinal evidence:</p>
+      </div>
+
+      <div class="tablewrap reveal">
+        <table class="data">
+          <caption>DORA State of DevOps: elite performers vs low performers, by report year</caption>
+          <thead><tr><th scope="col">Report</th><th scope="col">Elite share of teams</th><th scope="col">Deploy frequency gap</th><th scope="col">Elite change-failure rate</th><th scope="col">Notable</th></tr></thead>
+          <tbody>
+            <tr><td class="mono"><a href="https://dora.dev/research/2016/">2016</a></td><td class="dim">“high performers”</td><td>200× more frequent</td><td class="dim">3× lower than low</td><td>Lead time 2,555× faster</td></tr>
+            <tr><td class="mono"><a href="https://dora.dev/research/2018/dora-report/">2018</a></td><td>first “elite” cluster</td><td>46× more frequent</td><td>7× lower</td><td>Restore 2,604× faster</td></tr>
+            <tr><td class="mono"><a href="https://dora.dev/research/2019/dora-report/">2019</a></td><td>20%</td><td>208× (≈1,460/yr vs 7/yr)</td><td>0–15%</td><td>Elite lead time &lt;1 day</td></tr>
+            <tr><td class="mono"><a href="https://dora.dev/research/2021/dora-report/">2021</a></td><td>26%</td><td>973× (≈1,460/yr vs 1.5/yr)</td><td>0–15%</td><td>Elite lead time &lt;1 hour</td></tr>
+            <tr><td class="mono"><a href="https://dora.dev/research/2023/dora-report/">2023</a></td><td>18%</td><td>on-demand vs weekly–monthly</td><td>5%</td><td>Low performers' CFR: 64%</td></tr>
+            <tr><td class="mono"><a href="https://dora.dev/research/2024/dora-report/">2024</a></td><td colspan="3">throughput/stability split into separate constructs</td><td>First AI-impact estimates (below)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose">
+        <p>Read the table with the methodology in mind: cluster definitions shift between years (which is why the multipliers jump around), the data is self-reported survey data, and “elite” is a cluster, not a fixed bar. What is robust across every year of the research is the finding that made <em>Accelerate</em> famous: <strong>speed and stability correlate positively.</strong> The teams that deploy most often also break least and recover fastest — smallness of batch, not slowness of pace, is what protects them. “Move fast and break things” was always a false trade; the data says move fast <em>and</em> break less.</p>
+
+        <h3>Experiment volume exploded</h3>
+      </div>
+
+      <figure class="viz reveal">
+        <div class="viz-card">
+          <p class="viz-title">Amazon Weblab experiments per year</p>
+          <p class="viz-sub">The only big-company experiment counts ever published in a shareholder letter.</p>
+          <svg viewBox="0 0 560 240" role="img" aria-label="Bar chart of Amazon Weblab experiment counts: 546 experiments in 2011, 1,092 in 2012, and 1,976 in 2013 — roughly doubling each year.">
+            <g font-size="13">
+              <line x1="70" y1="190" x2="530" y2="190" stroke="var(--baseline)" stroke-width="1"/>
+              <g fill="var(--s1)">
+                <rect x="143" y="145.4" width="24" height="44.6" rx="4"/>
+                <rect x="143" y="186" width="24" height="4"/>
+                <rect x="273" y="100.8" width="24" height="89.2" rx="4"/>
+                <rect x="273" y="186" width="24" height="4"/>
+                <rect x="403" y="28.6" width="24" height="161.4" rx="4"/>
+                <rect x="403" y="186" width="24" height="4"/>
+              </g>
+              <g fill="var(--ink)" text-anchor="middle" font-weight="650">
+                <text x="155" y="137">546</text>
+                <text x="285" y="92">1,092</text>
+                <text x="415" y="20">1,976</text>
+              </g>
+              <g fill="var(--ink-2)" text-anchor="middle">
+                <text x="155" y="212">2011</text>
+                <text x="285" y="212">2012</text>
+                <text x="415" y="212">2013</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption><span class="src">Source: <a href="https://s2.q4cdn.com/299287126/files/doc_financials/annual/2013-Letter-to-Shareholders.pdf">Amazon 2013 letter to shareholders</a> (published April 2014). Amazon stopped publishing counts after this; by 2017 HBR placed it in the “10,000+ per year” tier.</span></figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>The volume story is consistent everywhere it has been published. Bing ran <a href="https://www.exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf">over 200 concurrent experiments on any given day by 2013</a>, each typically exposing several million users. Booking.com reached <a href="https://hbr.org/2020/03/building-a-culture-of-experimentation">1,000+ simultaneous tests</a>. Google disclosed <a href="https://www.seroundtable.com/google-3200-changes-to-search-27890.html">654,680 search experiments in 2019</a>, producing 3,620 launches — a 0.6% launch rate that says as much about the failure base rate as about Google's ambition. And the through-line from Kohavi's KDD paper is worth engraving somewhere: the experiments that <em>did</em> win were often absurdly cheap — two Bing changes “which took days to develop, each increased ad revenue by about $100 million annually.”</p>
+
+        <h3>From opinion to telemetry — and the backlash</h3>
+        <p>The cultural shift underneath the numbers: product arguments that were settled by seniority in 2005 are settled by dashboards today. But the backlash is now old enough to have its own classics, and it deserves fair weight. Doug Bowman's 2009 <a href="https://stopdesign.com/journal/2009/03/20/goodbye-google.html">resignation post</a> named the cost of measuring everything: design reduced to defensible micro-decisions, “debating whether a border should be 3, 4 or 5 pixels wide.” Goodhart's law — in Marilyn Strathern's 1997 phrasing, <em>“when a measure becomes a target, it ceases to be a good measure”</em> — predicts what every metric-fixated org eventually rediscovers, and Jerry Muller's <em>The Tyranny of Metrics</em> (2018) catalogued it across medicine, policing and education, not just software. Even the field's own founder warns against the local-maximum trap; Kohavi's KDD 2013 paper puts it in one line: <a href="https://www.exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf">“you don't get to the moon by climbing higher and higher trees.”</a> The synthesis most mature teams land on: telemetry decides <em>small</em> reversible questions; taste and strategy decide which tree to climb — the stance Linear turned into an identity (<a href="#cases">chapter 5</a>).</p>
+
+        <h3>Privacy rebuilt the measurement layer</h3>
+      </div>
+
+      <figure class="viz wide reveal">
+        <div class="viz-card">
+          <p class="viz-title">The measurement layer's regulatory decade</p>
+          <p class="viz-sub">Dated milestones that reshaped what a website is allowed to know.</p>
+          <svg viewBox="0 0 860 250" role="img" aria-label="Timeline of privacy milestones from 2017 to 2025. June 2017: Safari ships Intelligent Tracking Prevention 1.0. May 2018: GDPR becomes applicable. February 2019: ITP 2.1 caps first-party JavaScript cookies at seven days, breaking analytics bucketing. January 2020: Chrome announces third-party cookie phase-out within two years. July 2024: Google abandons the deprecation in favor of user choice. April 2025: Google confirms no standalone cookie prompt; third-party cookies survive.">
+            <g font-size="12.5">
+              <line x1="40" y1="125" x2="820" y2="125" stroke="var(--baseline)" stroke-width="2"/>
+              <g fill="var(--s1)" stroke="var(--paper)" stroke-width="2.5">
+                <circle cx="80" cy="125" r="7"/>
+                <circle cx="200" cy="125" r="7"/>
+                <circle cx="320" cy="125" r="7"/>
+                <circle cx="440" cy="125" r="7"/>
+                <circle cx="620" cy="125" r="7"/>
+                <circle cx="760" cy="125" r="7"/>
+              </g>
+              <!-- above-line entries -->
+              <g text-anchor="middle">
+                <text x="80" y="78" fill="var(--ink)" font-weight="650">Jun 2017</text>
+                <text x="80" y="96" fill="var(--ink-2)">Safari ITP 1.0</text>
+                <text x="320" y="60" fill="var(--ink)" font-weight="650">Feb 2019</text>
+                <text x="320" y="78" fill="var(--ink-2)">ITP 2.1: 7-day cap on</text>
+                <text x="320" y="94" fill="var(--ink-2)">first-party JS cookies</text>
+                <text x="620" y="78" fill="var(--ink)" font-weight="650">Jul 2024</text>
+                <text x="620" y="96" fill="var(--ink-2)">Chrome abandons deprecation</text>
+              </g>
+              <!-- below-line entries -->
+              <g text-anchor="middle">
+                <text x="200" y="160" fill="var(--ink)" font-weight="650">May 2018</text>
+                <text x="200" y="178" fill="var(--ink-2)">GDPR applies</text>
+                <text x="440" y="160" fill="var(--ink)" font-weight="650">Jan 2020</text>
+                <text x="440" y="178" fill="var(--ink-2)">Chrome announces 3P-cookie</text>
+                <text x="440" y="194" fill="var(--ink-2)">phase-out “within two years”</text>
+                <text x="760" y="160" fill="var(--ink)" font-weight="650">Apr 2025</text>
+                <text x="760" y="178" fill="var(--ink-2)">…cookies stay;</text>
+                <text x="760" y="194" fill="var(--ink-2)">no prompt shipped</text>
+              </g>
+              <text x="430" y="234" fill="var(--ink-3)" text-anchor="middle" font-size="12">Five and a half years from “obsolete within two years” to “we will maintain our current approach.”</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption><span class="src">Sources: <a href="https://webkit.org/blog/7675/intelligent-tracking-prevention/">WebKit ITP 1.0 (2017)</a> · <a href="https://webkit.org/blog/8613/intelligent-tracking-prevention-2-1/">ITP 2.1 (2019)</a> · <a href="https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html">Chromium (Jan 2020)</a> · <a href="https://privacysandbox.com/news/privacy-sandbox-update/">Privacy Sandbox (Jul 2024)</a> · <a href="https://privacysandbox.com/news/privacy-sandbox-next-steps/">Privacy Sandbox (Apr 2025)</a>.</span></figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>Two of these dates matter more than the famous ones. ITP 2.1 (February 2019) capped <em>first-party JavaScript cookies</em> at seven days in Safari — quietly breaking not ad tech but ordinary analytics and experiment bucketing: a returning Safari visitor after a week is a “new” user, and a two-week A/B test can re-randomise its own participants. And the Chrome saga's anticlimax — announced January 2020 as a two-year phase-out, <a href="https://privacysandbox.com/news/privacy-sandbox-update/">abandoned July 2024</a>, confirmed dead April 2025 — whipsawed an entire industry that had spent four years rebuilding for a deprecation that never came. The durable consequences are structural, and they explain half of <a href="#tooling">chapter 6</a>: measurement moved server-side and first-party; cookieless-by-design analytics (Plausible, Fathom, Cloudflare) became a real category; consent management became a permanent tax; and experiment identity increasingly lives in your own warehouse rather than a vendor's cookie — the “warehouse-native” turn, whose consolidation (dbt merging with Fivetran in October 2025, Eppo to Datadog, Statsig to OpenAI) marks the end of its land-grab phase.</p>
+
+        <h3>AI: throughput up, stability down — the first real data</h3>
+        <p>The genuinely new trend of the last three years has real numbers attached, and they are more interesting than the marketing. DORA's 2024 report, under the blunt heading “AI is hurting delivery performance,” estimated that a 25% increase in AI adoption was associated with a <strong>1.5% decrease in delivery throughput and a 7.2% decrease in delivery stability</strong> — even as the same adoption improved documentation quality (+7.5%), code quality (+3.4%) and review speed. The proposed mechanism is the oldest lesson in this piece: AI makes it easy to write <em>more code per change</em>, and larger batches destabilise delivery — chapter 1's batch-size curve, replayed with a robot. The <a href="https://dora.dev/research/2025/dora-report/">2025 report</a> (retitled “State of AI-assisted Software Development”; 90% of respondents now use AI at work) found throughput had flipped positive as teams adapted — while <strong>instability persisted</strong>, and framed AI as “an amplifier”: it magnifies the strengths of well-run loops and the dysfunctions of broken ones. These are survey-based estimates, not controlled experiments — DORA says so itself — but they are the only longitudinal industry data that exists, and both directions of the story (real gains, real stability cost) deserve quoting together.</p>
+
+        <h3>New thing, or rebrand? A scorecard</h3>
+        <p>Honesty requires sorting the decade's vocabulary. <strong>Genuinely new since 2022:</strong> eval suites as CI gates for model behaviour; coding agents opening pull requests in production repos; measured (if contested) industry-wide data on AI's delivery effects; experimentation platforms inside AI labs ($1.1B says that's not a rebrand). <strong>Real but renamed:</strong> “platform engineering” is largely the 2010s' internal-tools-and-SRE practice given a Gartner curve and a budget line — the underlying shift (self-service infrastructure as an internal product) is real, the novelty is not. “Product-led growth” is the 2009–2012 freemium-plus-analytics playbook with better tooling. “Continuous discovery” is user research on a cadence — good practice, old idea. <strong>Asserted but unmeasured:</strong> that AI agents will close the full loop autonomously (<a href="#automation">chapter 7</a> examines exactly how much of that exists), and most vendor claims about “10× developer productivity,” which no independent longitudinal study currently supports.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="compound" aria-labelledby="compound-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 04</span>
+        <h2 id="compound-h">Why some compound and others stall</h2>
+        <p class="standfirst">Velocity is not a tooling property; it is an organisational one. The companies that kept iterating shared four structural mechanisms that made speed safe — and the famous freezes, examined honestly, were almost never blindness. They were rational organisations trapped by margins, debt, boards, or fear.</p>
+      </div>
+
+      <figure class="viz wide reveal">
+        <div class="viz-card">
+          <p class="viz-title">Four mechanisms that make speed safe</p>
+          <p class="viz-sub">Each converts a cultural aspiration (“move fast”) into a structural rule someone can actually follow.</p>
+          <svg viewBox="0 0 860 420" role="img" aria-label="Four-panel diagram. One: two-way doors — classify decisions as reversible, which should be decided fast by small groups, or irreversible, which deserve slow deliberation. Two: error budgets — an agreed service-level objective defines allowed unreliability; while budget remains you ship freely, when it is spent releases pause. Three: trunk-based development — short-lived branches merge to a single trunk daily, keeping batches small. Four: a failure budget — expect roughly ninety percent of ideas to fail, so single failures are routine, not crises.">
+            <g font-size="13">
+              <!-- Panel 1: two-way doors -->
+              <rect x="10" y="10" width="410" height="190" rx="12" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="30" y="42" font-weight="650" fill="var(--ink)" font-size="14.5">1 · Two-way doors</text>
+              <g stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="40" y="70" width="54" height="84" rx="4"/>
+                <line x1="66" y1="70" x2="66" y2="154"/>
+                <path d="M 46 100 L 58 112 L 46 124 M 86 100 L 74 112 L 86 124"/>
+              </g>
+              <text x="120" y="92" fill="var(--ink)" font-weight="650">Reversible?</text>
+              <text x="120" y="112" fill="var(--good-text)">→ decide fast, small group, ship</text>
+              <text x="120" y="136" fill="var(--ink)" font-weight="650">One-way door?</text>
+              <text x="120" y="156" fill="var(--ink-2)">→ slow, deliberate, escalate</text>
+              <text x="30" y="184" fill="var(--ink-3)" font-size="11.5">Bezos, 2015 shareholder letter</text>
+
+              <!-- Panel 2: error budget -->
+              <rect x="440" y="10" width="410" height="190" rx="12" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="460" y="42" font-weight="650" fill="var(--ink)" font-size="14.5">2 · Error budgets</text>
+              <rect x="460" y="76" width="300" height="18" rx="9" fill="var(--surface)" stroke="var(--border)"/>
+              <rect x="460" y="76" width="210" height="18" rx="9" fill="var(--s1)"/>
+              <text x="470" y="118" fill="var(--ink-2)">budget spent: <tspan fill="var(--ink)" font-weight="650">ship freely</tspan></text>
+              <text x="700" y="118" fill="var(--ink-2)">remaining</text>
+              <text x="460" y="146" fill="var(--ink-2)">Budget gone → releases pause, effort</text>
+              <text x="460" y="164" fill="var(--ink-2)">shifts to reliability. Pre-negotiated, not political.</text>
+              <text x="460" y="188" fill="var(--ink-3)" font-size="11.5">Google SRE book, 2016 — “Embracing Risk”</text>
+
+              <!-- Panel 3: trunk-based -->
+              <rect x="10" y="220" width="410" height="190" rx="12" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="30" y="252" font-weight="650" fill="var(--ink)" font-size="14.5">3 · Trunk-based development</text>
+              <g stroke-width="2.5" fill="none" stroke-linecap="round">
+                <line x1="40" y1="330" x2="390" y2="330" stroke="var(--accent)"/>
+                <path d="M 80 330 C 100 300, 130 300, 150 330" stroke="var(--ink-3)"/>
+                <path d="M 170 330 C 190 300, 220 300, 240 330" stroke="var(--ink-3)"/>
+                <path d="M 260 330 C 280 300, 310 300, 330 330" stroke="var(--ink-3)"/>
+              </g>
+              <text x="215" y="362" fill="var(--ink-2)" text-anchor="middle">branches live hours, not weeks — merge daily</text>
+              <text x="30" y="394" fill="var(--ink-3)" font-size="11.5">Flickr 2009 · trunkbaseddevelopment.com · DORA</text>
+
+              <!-- Panel 4: failure budget -->
+              <rect x="440" y="220" width="410" height="190" rx="12" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="460" y="252" font-weight="650" fill="var(--ink)" font-size="14.5">4 · A budget for failed ideas</text>
+              <g>
+                <circle cx="478" cy="300" r="10" fill="var(--baseline)"/><circle cx="510" cy="300" r="10" fill="var(--baseline)"/><circle cx="542" cy="300" r="10" fill="var(--baseline)"/><circle cx="574" cy="300" r="10" fill="var(--baseline)"/><circle cx="606" cy="300" r="10" fill="var(--baseline)"/>
+                <circle cx="638" cy="300" r="10" fill="var(--baseline)"/><circle cx="670" cy="300" r="10" fill="var(--baseline)"/><circle cx="702" cy="300" r="10" fill="var(--baseline)"/><circle cx="734" cy="300" r="10" fill="var(--baseline)"/><circle cx="766" cy="300" r="10" fill="var(--accent)"/>
+              </g>
+              <text x="460" y="342" fill="var(--ink-2)">~9 in 10 tested ideas fail to move their metric.</text>
+              <text x="460" y="360" fill="var(--ink-2)">Plan for it, and one failure is routine, not a crisis.</text>
+              <text x="460" y="392" fill="var(--ink-3)" font-size="11.5">Booking.com ~90% · Microsoft ~2/3 · Google/Bing 80–90%</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Sources: <a href="https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF">Amazon 2015 shareholder letter</a> · <a href="https://sre.google/sre-book/embracing-risk/">Google SRE, “Embracing Risk” (2016)</a> · <a href="https://hbr.org/2020/03/building-a-culture-of-experimentation">Thomke, HBR 2020</a> · <a href="https://hbr.org/2017/09/the-surprising-power-of-online-experiments">Kohavi &amp; Thomke, HBR 2017</a>.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>Start with the mechanism that underwrites all the others. In his <a href="https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF">2015 letter to shareholders</a>, Jeff Bezos distinguished Type 1 decisions — “consequential and irreversible or nearly irreversible – one-way doors,” to be made “methodically, carefully, slowly” — from Type 2: “changeable, reversible – they're two-way doors,” which “can and should be made quickly by high judgment individuals or small groups.” His warning was about the failure mode of scale: large organisations drift into using the heavyweight Type 1 process on everything, and the result is “slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention.” Nearly every practice in this piece — flags, canaries, staged rollouts, easy reverts — is engineering that <em>converts Type 1 decisions into Type 2 decisions</em>, so more of the company can move at Type 2 speed.</p>
+        <p>Google's SRE organisation solved the other chronic velocity fight — “your releases break my reliability” — with the <a href="https://sre.google/sre-book/embracing-risk/">error budget</a> (2016): agree an explicit reliability target below 100%, and the gap is a budget product teams may spend on shipping. While budget remains, releases flow without argument; when it's spent, releases stop without argument. The genius is not the number, it's the <em>pre-negotiation</em> — reliability-versus-velocity becomes a rule you consult rather than a fight you re-litigate. Add trunk-based development (keeping batches structurally small — DORA's research repeatedly ties it to elite delivery performance) and a stated tolerance for the ~90% idea-failure rate, and you have the full mechanism kit. One more precondition costs nothing and is rarest of all: <em>every metric has exactly one owner.</em> A number nobody owns is decoration; a number two teams own is a turf war.</p>
+
+        <h3>Blockbuster vs Netflix — the honest version</h3>
+        <p>The caricature says Blockbuster laughed Netflix out of the room and never saw it coming. Half true: in 2000, Reed Hastings and Marc Randolph did offer Netflix to Blockbuster for $50M and CEO John Antioco <a href="https://www.inc.com/minda-zetlin/netflix-blockbuster-meeting-marc-randolph-reed-hastings-john-antioco.html">declined, calling the dot-com hysteria overblown</a>. But what happened next is the interesting part: Blockbuster <em>did</em> iterate. Blockbuster Online launched in 2004; late fees were dropped in January 2005; Total Access (return online rentals in any store) launched in <a href="https://www.npr.org/templates/story/story.php?storyId=9151791">November 2006</a> and worked — Blockbuster projected roughly three million online subscribers by early 2007 while Netflix's growth <a href="https://www.cnbc.com/2020/09/22/how-netflix-almost-lost-the-movie-rental-wars-to-blockbuster.html">visibly stalled</a>. Then the loop was broken from above: an activist-board fight over Antioco's bonus pushed him out in 2007, and his successor cut investment in the online business. Antioco's own verdict, in <a href="https://hbr.org/2011/04/how-i-did-it-blockbusters-former-ceo-on-sparring-with-an-activist-shareholder">HBR (2011)</a>: had the strategy not been “essentially abandoned,” Blockbuster Online would have been rivalling Netflix. Bankruptcy came in September 2010. The lesson is not “they didn't iterate” — it's that <strong>iteration is a capability a board can destroy in one decision</strong>, and debt plus franchise economics made every experiment a fight.</p>
+        <p>Netflix's side of the pair is just as instructive, because its defining moment is a <em>failure</em>: the 2011 price hike and Qwikster spin-off cost 800,000 subscribers in a quarter and roughly three-quarters of the stock price — and Hastings killed Qwikster <a href="https://www.npr.org/sections/thetwo-way/2011/10/10/141209082/netflix-kills-qwikster-price-hike-lives-on">23 days after announcing it</a>. The iterator's superpower was never not-blundering. It was treating even a CEO-level strategy launch as reversible, and reversing it in public within a month.</p>
+
+        <h3>Kodak and Nokia — lock-in and fear, not blindness</h3>
+        <p>Kodak engineer Steve Sasson built the first digital camera in December 1975; management's response — <a href="https://www.forbes.com/sites/chunkamui/2012/01/18/how-kodak-failed/">“that's cute — but don't tell anyone about it”</a> — is the most-quoted line in corporate-failure literature. But the caricature fails an easy fact-check: Kodak patented the technology, invested billions in digital R&amp;D, and by 2005 led the US digital-camera market with its EasyShare line. What it could not do was <em>want</em> digital to win, because film carried extraordinary margins and digital cameras were thin-margin commodities. That is Clayton Christensen's innovator's dilemma in its purest form: rational managers protecting their best business is precisely the trap. Kodak filed for bankruptcy in January 2012 — having shipped the future and been unable to afford it.</p>
+        <p>Nokia held over half the global smartphone market when the iPhone shipped. The remarkable evidence of what happened next comes from Vuori and Huy's 2016 study in <em>Administrative Science Quarterly</em>, built on 76 insider interviews: <a href="https://journals.sagepub.com/doi/10.1177/0001839215606951">a culture of distributed fear</a>. Top managers feared competitors and shareholders; middle managers feared their superiors — and so withheld bad news about Symbian's true state, leaving leadership overly optimistic while the platform's fragmented UI layers made every iteration slow. By the time CEO Stephen Elop wrote the leaked <a href="https://www.engadget.com/2011-02-08-nokia-ceo-stephen-elop-rallies-troops-in-brutally-honest-burnin.html">“burning platform” memo</a> (February 2011) — “The first iPhone shipped in 2007, and we still don't have a product that is close to their experience” — the loop had been broken for years, not by ignorance but by the fact that <strong>accurate bad news could not travel upward</strong>. The handset business sold to Microsoft in September 2013. Blameless postmortems (<a href="#timeline">chapter 2</a>) are not a nicety; they are the anti-Nokia mechanism.</p>
+
+        <h3>Sears — the everything store that hung up first</h3>
+        <p>Sears is the strangest case because it held every card. Its catalog <em>was</em> the everything store, a century early; it co-founded the Prodigy online service in 1984 — online shopping, a decade before the web mattered. Then in January 1993, bleeding from a $3.9B loss, it killed the Big Book catalog — the mail-order muscle and customer data that would have translated directly to e-commerce — about eighteen months before Amazon was founded (a juxtaposition, to be fair, visible only in hindsight). The Lampert era added the modern failure mode: <a href="https://sites.law.berkeley.edu/thenetwork/2018/10/20/a-financial-engineering-failure-sears-files-for-bankruptcy/">financial engineering instead of product investment</a> — buybacks and real-estate spinoffs while stores decayed. Chapter 11 came in October 2018. Sears never lost a product argument; it stopped having them.</p>
+
+        <h3>Craigslist — the deliberate non-iterator</h3>
+        <p>The control case that keeps this chapter honest: Craigslist has barely changed its design since the early 2000s, on purpose. Craig Newmark's stated philosophy is that people want <a href="https://www.adammendler.com/blog/craigslist-founder-craig-newmark/">“functional, effective, simple, and fast”</a> — and the numbers vindicate the stasis: roughly <a href="https://www.forbes.com/sites/ryanmac/2017/05/03/how-does-craigslist-make-money/">$694M revenue in 2016 with about 50 employees</a>, crossing an estimated $1B by 2018. Not iterating was a profitable strategy. Both halves of the coda matter, though. First, the strategy worked because classifieds have brutal network effects — the moat, not the minimalism, printed the money. Second, the stillness had a price someone else collected: the famous <a href="https://www.cbinsights.com/research/craigslist-unbundling/">“unbundling of Craigslist”</a> map — by one 2012 count, 82 startups funded with $8.87B — carved off vacation rentals (Airbnb), dating, jobs and ticketing one category at a time. Stopping can be a strategy (<a href="#stopping">chapter 9</a> takes this seriously). But you only get to stop where your moat holds, and the market bills you for every itch you decline to scratch.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="cases" aria-labelledby="cases-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 05</span>
+        <h2 id="cases-h">Case studies: how the fast ones actually do it</h2>
+        <p class="standfirst">Seven companies in depth, five in brief — with documented cadence numbers, one specific experiment each, and a deliberate emphasis on the experiments that <em>failed</em>, because the moments when the data contradicted the design instinct are where the loop proves its worth. Everything numeric below is sourced; where a famous story rests on retellings rather than a primary document, it says so.</p>
+      </div>
+
+      <div class="stat-strip reveal">
+        <div class="stat">
+          <div class="stat-value">490</div>
+          <div class="stat-label">Claude Code versions published in its first 18 months — roughly one per day</div>
+          <div class="stat-src">npm registry, computed Aug 19, 2026</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">1,976</div>
+          <div class="stat-label">Weblab experiments Amazon ran in 2013 — up from 546 in 2011</div>
+          <div class="stat-src"><a href="https://s2.q4cdn.com/299287126/files/doc_financials/annual/2013-Letter-to-Shareholders.pdf">Bezos shareholder letter, 2013</a></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">1,000+</div>
+          <div class="stat-label">concurrent experiments running at Booking.com at any moment</div>
+          <div class="stat-src"><a href="https://hbr.org/2020/03/building-a-culture-of-experimentation">Thomke, HBR 2020</a></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">20–30%</div>
+          <div class="stat-label">more viewing from a winning artwork test at Netflix</div>
+          <div class="stat-src"><a href="https://netflixtechblog.com/its-all-a-bout-testing-the-netflix-experimentation-platform-4e1ca458c15">Netflix TechBlog, 2016</a></div>
+        </div>
+      </div>
+
+      <article class="case reveal">
+        <header><h3>Anthropic — Claude Code</h3><span class="case-tag">dogfood → daily release</span></header>
+        <p>Claude Code began as Boris Cherny's internal terminal prototype; by his account roughly half of Anthropic's engineers were using it within days of the internal release, and it shipped publicly as a research preview on February 24, 2025. The loop is dogfooding at maximum intensity: the team that builds the tool uses the tool to build the tool, so feedback latency approaches zero — an engineer hits a papercut in the morning and the fix can ship the same day.</p>
+        <p>The cadence is the striking, verifiable part. The npm registry shows <strong>490 versions of <span class="num">@anthropic-ai/claude-code</span> published between February 24, 2025 and August 2026</strong> — a sustained release a day for eighteen months, including 35 in the month it reached v1.0 (May 22, 2025), each with granular <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">changelog</a> entries. Anthropic has stated that <a href="https://fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/">over 90% of the Claude Code team's code is written with Claude Code</a> — a company statement rather than an audit, but the trajectory of the claim is itself documented, and its engineering posts describe internal rollouts (such as the “auto mode” permission classifier) validated against a running incident log of real agentic failures.</p>
+        <div class="steal"><span class="steal-label">What a small shop can steal</span>Use your own product for real work daily, and treat release count as a health metric — a changelog that moves every day is an instrument, not a chore. (Disclosure: this page was researched and built with Claude Code, so consider the incentive and weigh the numbers, which are public, over the narrative.)</div>
+      </article>
+
+      <article class="case reveal">
+        <header><h3>OpenAI — Codex</h3><span class="case-tag">measure your own adoption</span></header>
+        <p>Codex relaunched as a cloud software-engineering agent on <a href="https://openai.com/index/introducing-codex/">May 16, 2025</a>, running each task in its own sandbox and shipping draft pull requests. Its loop runs in public: the open-source CLI has pushed <strong>897 distinct npm versions since April 2025</strong> (registry data, August 2026), often several releases a day, with model upgrades — GPT-5-Codex, September 15, 2025 — treated as product releases.</p>
+        <p>The distinctive practice is obsessive measurement of internal adoption as the leading metric: OpenAI has published that nearly all of its own employees use Codex daily, with the tool accounting for the large majority of output. Those are company statements with obvious marketing value — but using <em>your own org's adoption curve</em> as the primary instrument for an internal tool is a loop design worth copying regardless of whose numbers you trust. Notably, OpenAI then bought its measurement layer outright: the <a href="https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/">$1.1B Statsig acquisition</a> (September 2025) put the experimentation platform it used inside the company.</p>
+        <div class="steal"><span class="steal-label">What a small shop can steal</span>Iterate in public with an open changelog, and when you build something for yourself, track whether you actually keep using it — self-adoption is the cheapest honest metric there is.</div>
+      </article>
+
+      <article class="case reveal">
+        <header><h3>Linear</h3><span class="case-tag">the deliberate non-experimenter</span></header>
+        <p>Linear is this chapter's control group: a high-velocity shipper that <em>rejects</em> A/B testing on principle. Karri Saarinen has been explicit — Linear runs <a href="https://www.lennysnewsletter.com/p/inside-linear-building-with-taste">no A/B tests; decisions are made on taste and conviction</a>, informed by a standing beta cohort that sees features days to months before launch. There are no product managers in the traditional sense and no metric-based team goals; <a href="https://www.lennysnewsletter.com/p/how-linear-builds-product">teams assemble per project and disperse</a>.</p>
+        <p>What Linear keeps from the loop is the <em>cadence</em>, ruthlessly: a changelog entry every week, shipped on the same day every week, whether the week produced a flagship feature or a handful of fixes. The heartbeat is the commitment; scope flexes around it. It works for Linear because its market — developer tools for discerning users, where the founders are the target customer — is one where taste has unusually high information content and experiment traffic is comparatively low. The lesson is not “skip experiments”; it is that <em>an explicit, written-down decision policy beats an unexamined one</em>, whichever policy you pick.</p>
+        <div class="steal"><span class="steal-label">What a small shop can steal</span>The fixed weekly ship day. And Linear's honesty: if you're going to decide by taste — which at small-site traffic you mostly must (<a href="#smallshop">chapter 8</a>) — say so out loud and keep a beta reader instead of pretending to statistics you don't have.</div>
+      </article>
+
+      <article class="case reveal">
+        <header><h3>Netflix</h3><span class="case-tag">test the creative, not just the code</span></header>
+        <p>Netflix's 2016 platform post opens with the doctrine: <a href="https://netflixtechblog.com/its-all-a-bout-testing-the-netflix-experimentation-platform-4e1ca458c15">“every product change goes through a rigorous A/B testing process”</a> — UI, recommendations, playback, search, email, sign-up. The same culture extends to reliability: the <a href="https://netflixtechblog.com/the-netflix-simian-army-16e57fbab116">Simian Army</a> (July 2011) deliberately kills production instances so that resilience, too, is continuously tested rather than assumed.</p>
+        <p>The experiment that made the company's case: artwork. Netflix reported that a winning title image can drive <strong>20–30% more viewing</strong> for that title, and its <a href="https://netflixtechblog.com/selecting-the-best-artwork-for-videos-through-a-b-testing-f6155c4595f6">May 2016 write-up</a> of the first single-title test (the documentary <em>The Short Game</em>) measured a 14% lift from one alternative image. The uncomfortable finding, and the reason this is a data-beats-instinct story: the images that won were routinely not the ones the design team would have picked — expressive faces beat polished key art, and villains outperformed heroes in some genres. By 2017 the selection itself was automated per user as a <a href="https://netflixtechblog.com/artwork-personalization-c589f074ad76">contextual bandit</a> (<a href="#automation">chapter 7</a>).</p>
+        <div class="steal"><span class="steal-label">What a small shop can steal</span>Test the cheap surfaces first. Changing an image, a headline, or notification copy costs nothing to build and often moves numbers more than a quarter of feature work — which is exactly why Netflix spent its experiment budget there.</div>
+      </article>
+
+      <article class="case reveal">
+        <header><h3>Booking.com</h3><span class="case-tag">permissionless, guard-railed</span></header>
+        <p>The most radical loop design in this chapter: at Booking.com, <a href="https://hbr.org/2020/03/building-a-culture-of-experimentation">anyone in the company can launch an experiment on millions of users without management permission</a> (Stefan Thomke, HBR, March–April 2020; the platform is described in the team's own <a href="https://arxiv.org/abs/1710.08217">2017 paper</a>). Approval gates are replaced by automated guardrails — sample-ratio checks, standard metrics, automatic stopping. The result is volume no approval process could reach: over a thousand concurrent experiments, on the order of 25,000 a year.</p>
+        <p>What that volume bought is the honest number every experimentation culture eventually reports: Booking found its predictions of customer behaviour were <strong>wrong about 90% of the time</strong>. Thomke's account names intuition-driven failures — a neighbourhood walkability score, packaged hotel offers, a chat line — that all died in testing. Ten failures for every win is not the system malfunctioning; it is the measured base rate of product intuition, consistent with Microsoft's and Google's published figures (<a href="#loop">chapter 1</a>). The companies that know this number budget for it. The ones that don't, ship the 90% anyway.</p>
+        <div class="steal"><span class="steal-label">What a small shop can steal</span>The guardrail inversion: instead of making changes hard to try, make them safe to try — staging previews, easy rollback, a defined metric — then try more of them. And write down your null results; they're the tuition you already paid.</div>
+      </article>
+
+      <article class="case reveal">
+        <header><h3>Duolingo</h3><span class="case-tag">choose the north star analytically</span></header>
+        <p>The best-documented growth loop in consumer software, thanks to former CPO Jorge Mazal's <a href="https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth">detailed 2023 account</a>. Before optimising anything, Duolingo modelled <em>which</em> retention metric most moved daily active users, and found that improving current-user retention (CURR) had roughly five times the DAU impact of the runner-up metric. Only then did the A/B machine start grinding: streak mechanics, notification copy, leaderboards — dozens of small wins compounding into <strong>4.5× DAU growth from 2018 to 2022</strong>.</p>
+        <p>Two experiments carry the chapter's thesis. The failure: Duolingo cloned the gamification mechanics of the hit game Gardenscapes — a serious, multi-quarter effort — and the result was, in Mazal's words, “completely neutral. No change to our retention. No increase in DAU.” The team was disbanded. The win that surprised: leaderboards, a comparatively simple social mechanic, increased overall learning time 17% and <em>tripled</em> the count of highly-engaged learners. And the famous passive-aggressive notification — “These reminders don't seem to be working. We'll stop sending them for now.” — is a real, shipped product of the notification-copy testing program (<a href="https://sherwood.news/tech/duolingo-q2-earnings-monthly-active-users-milestone/">widely covered</a>; treat specific lift figures in retellings with caution).</p>
+        <div class="steal"><span class="steal-label">What a small shop can steal</span>Spend a day deciding which single number you're actually trying to move before touching the site. Duolingo's biggest lever was picking the right metric, not any one test. And expect transplanted mechanics from other products to fail — they usually do.</div>
+      </article>
+
+      <article class="case reveal">
+        <header><h3>Amazon</h3><span class="case-tag">experiment count as a KPI</span></header>
+        <p>Amazon is the company that put its experiment count in a shareholder letter: <a href="https://s2.q4cdn.com/299287126/files/doc_financials/annual/2013-Letter-to-Shareholders.pdf">“In 2013, we ran 1,976 Weblabs worldwide, up from 1,092 in 2012, and 546 in 2011”</a> — the growth <em>rate of experimentation itself</em> reported to investors as a performance indicator. The loop's supporting structure is famous: two-pizza teams small enough to own a metric, and Working Backwards — writing the press release and FAQ before the code — which is a hypothesis document by another name.</p>
+        <p>The founding experiment story is in <a href="#timeline">chapter 2</a>: Greg Linden's shopping-cart recommendations, forbidden by a senior VP, tested anyway, and shipped because the measurement won the argument. The other half of Amazon's contribution — the reversible/irreversible decision framework that makes this velocity safe — anchors <a href="#compound">chapter 4</a>.</p>
+        <div class="steal"><span class="steal-label">What a small shop can steal</span>Working Backwards scales down to one person perfectly: write the three-sentence announcement of the change before you make it. If you can't say what will be different for the customer, you've found that out at the cheapest possible moment.</div>
+      </article>
+
+      <h3 style="font-family:var(--font-display); font-size:var(--size-3); font-weight:620; margin:3.5rem 0 0.5rem;" class="reveal">Five more, briefly</h3>
+      <div class="prose reveal">
+        <p><strong>Vercel</strong> runs two-speed releasing at maximum spread: the Next.js repo publishes a canary for essentially every merge — <strong>3,899 total npm versions</strong>, running 30–64 releases a month through 2025–26 (registry data) — while stable majors land deliberately, about twice a year. Its <a href="https://vercel.com/blog/flags-as-code-in-next-js">Flags SDK</a> (2024) pushed “flags as code” into the framework itself. <strong>Figma</strong> is the quality-culture counterpoint: rather than experiment volume, it institutionalises <a href="https://www.figma.com/blog/little-big-updates-dispatches-from-quality-week/">Quality Weeks</a> (documented January 2022) — scheduled whole-team sprints on papercuts — and validates big changes through long-running betas and community feedback ahead of its annual Config reveal. <strong>GitHub</strong> documented its flag-driven loop in <a href="https://github.blog/2021-04-27-ship-code-faster-safer-feature-flags/">“How we ship code faster and safer with feature flags”</a> (April 2021): everything deploys dark to production, gets “staff-shipped” to employees first, then rolls out progressively — deploy and release fully decoupled. <strong>Shopify</strong> ships continuously but markets in batches: since Summer 2022 it has bundled each half-year of shipped work into an <a href="https://www.shopify.com/editions">Editions</a> microsite of 100+ updates — turning routine iteration into an event twice a year without ever holding a release for it.</p>
+        <p><strong>Spotify</strong> earns its place as a cautionary tale about copying loops. The famous 2012 squad model whitepaper became the most-imitated org chart in software — and by 2020, <a href="https://www.jeremiahlee.com/posts/failed-squad-goals/">“Spotify doesn't use 'the Spotify model' and neither should you”</a> was the informed verdict: the company itself had moved on, and the model's assumed collaboration skills were exactly what importers lacked. Spotify's genuinely great loop story is smaller: Discover Weekly (2015) shipped with a bug that let songs you already knew slip into a playlist meant to be all-new. When engineers fixed it, engagement fell — the familiar songs were creating the trust that made people try the unfamiliar ones — so the team <a href="https://www.anecdote.com/2018/11/spotify-bugs-bite-back-35/">put the “bug” back</a> (a story told by the team in interviews and retellings rather than a primary engineering post; the mechanism, not the precise numbers, is the citable part).</p>
+      </div>
+
+      <div class="tablewrap reveal">
+        <table class="data">
+          <caption>Documented cadence and loop style, side by side</caption>
+          <thead><tr><th scope="col">Company</th><th scope="col">Loop style</th><th scope="col">Documented cadence / volume</th><th scope="col">Best-sourced number</th></tr></thead>
+          <tbody>
+            <tr><td>Anthropic (Claude Code)</td><td>Dogfood-first, continuous release</td><td>~1 npm release/day since Feb 2025</td><td class="mono">490 versions / 18 mo</td></tr>
+            <tr><td>OpenAI (Codex)</td><td>Public iteration, internal adoption as metric</td><td>Multiple releases/day at peak</td><td class="mono">897 versions since Apr 2025</td></tr>
+            <tr><td>Vercel (Next.js)</td><td>Canary-per-merge + deliberate stables</td><td>30–64 releases/mo</td><td class="mono">3,899 versions total</td></tr>
+            <tr><td>Linear</td><td>Taste + beta cohort, no A/B tests</td><td>Fixed weekly changelog</td><td class="mono">every week, same day</td></tr>
+            <tr><td>Amazon</td><td>Permission-light experimentation (Weblab)</td><td>Experiment count as KPI</td><td class="mono">1,976 tests in 2013</td></tr>
+            <tr><td>Booking.com</td><td>Permissionless, automated guardrails</td><td>~25,000 experiments/yr</td><td class="mono">1,000+ concurrent</td></tr>
+            <tr><td>Netflix</td><td>Everything tested, incl. creative</td><td>All product changes via A/B</td><td class="mono">+20–30% viewing (artwork)</td></tr>
+            <tr><td>Duolingo</td><td>North-star modelling + notification/streak tests</td><td>Continuous, compounding small wins</td><td class="mono">4.5× DAU, 2018–22</td></tr>
+            <tr><td>Shopify</td><td>Ship continuously, market in batches</td><td>Editions 2×/year since 2022</td><td class="mono">100+ updates/edition</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose">
+        <p>Sources for the table are as cited in each case above; npm figures computed from the public registry on August 19, 2026. The spread is the point: a weekly taste-driven changelog and 25,000 annual experiments are both working loops. What no company on this list has is the thing most stalled products have — <em>an undefined cadence and an unexamined decision policy</em>.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="tooling" aria-labelledby="tooling-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 06</span>
+        <h2 id="tooling-h">The tooling map</h2>
+        <p class="standfirst">Every stage of the loop now has an off-the-shelf tool, most of them with a free tier that would have cost six figures to replicate in 2010. Here is the stack, layer by layer — what each thing is actually for, roughly what it costs, when it is overkill, and where it came from. Lineage matters: almost every tool on this map is a company's internal loop, productized.</p>
+      </div>
+
+      <figure class="viz wide reveal">
+        <div class="viz-card">
+          <p class="viz-title">The stack, mapped to the loop</p>
+          <p class="viz-sub">Each layer of tooling serves one stage of the loop. Most teams buy top-down; most value accrues bottom-up.</p>
+          <svg viewBox="0 0 910 430" role="img" aria-label="Layered diagram mapping tooling categories to loop stages. Decide: experimentation and feature flags. Learn: session replay and feedback capture. Measure: product analytics, real-user monitoring, error tracking. Ship: CI/CD, preview deploys, uptime monitoring. Build: version control and agentic coding tools.">
+            <g font-size="13">
+              <!-- bands -->
+              <g>
+                <rect x="150" y="20"  width="690" height="66" rx="10" fill="var(--accent-wash)" stroke="var(--border)"/>
+                <rect x="150" y="98"  width="690" height="66" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <rect x="150" y="176" width="690" height="66" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <rect x="150" y="254" width="690" height="66" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+                <rect x="150" y="332" width="690" height="66" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+              </g>
+              <!-- loop-stage labels -->
+              <g text-anchor="end" font-weight="650" fill="var(--ink)">
+                <text x="130" y="50">Decide</text>
+                <text x="130" y="128">Learn</text>
+                <text x="130" y="206">Measure</text>
+                <text x="130" y="284">Ship</text>
+                <text x="130" y="362">Build</text>
+              </g>
+              <!-- band content -->
+              <g fill="var(--ink)" font-weight="650">
+                <text x="172" y="46">Experimentation &amp; feature flags</text>
+                <text x="172" y="124">Session replay · qualitative · feedback</text>
+                <text x="172" y="202">Product analytics · RUM · error tracking</text>
+                <text x="172" y="280">CI/CD · preview deploys · uptime</text>
+                <text x="172" y="358">Version control · code review · coding agents</text>
+              </g>
+              <g fill="var(--ink-2)">
+                <text x="172" y="68">Statsig · LaunchDarkly · GrowthBook · Eppo · Optimizely · OpenFeature</text>
+                <text x="172" y="146">PostHog · Clarity · Hotjar · FullStory · Canny · plain email</text>
+                <text x="172" y="224">PostHog · Amplitude · Mixpanel · Plausible · Sentry · Datadog · CrUX</text>
+                <text x="172" y="302">GitHub Actions · Vercel · Netlify · Cloudflare Pages · UptimeRobot · Checkly</text>
+                <text x="172" y="380">GitHub · Copilot · Claude Code · CI review bots</text>
+              </g>
+              <!-- return arrow: decide feeds build -->
+              <path d="M 846 53 C 878 53, 878 365, 852 365" fill="none" stroke="var(--accent)" stroke-width="2" class="loop-dash"/>
+              <path d="M 862 357 L 852 365 L 863 371" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="893" y="209" font-size="12" fill="var(--accent-ink)" transform="rotate(90 893 209)" text-anchor="middle">decisions become the next build</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Tool placement as of August 2026. Several names appear in multiple layers — PostHog deliberately spans four of them, which is its whole strategy.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h3>Product analytics: who does what in your product</h3>
+        <p>The layer that answers “do people actually use the thing I shipped?” <a href="https://mixpanel.com/blog/mixpanel-pricing-1m-free-events-autocapture/">Mixpanel</a> (2009) and Amplitude (2012, <a href="https://www.cnbc.com/2021/09/28/amplitude-starts-trading-on-nasdaq-in-direct-listing.html">Nasdaq direct listing September 2021</a>) built the category on event streams — not pageviews but named actions with properties, funnels, retention curves. <a href="https://posthog.com/">PostHog</a> (founded January 2020, Y&nbsp;Combinator W20, open source) attacked it from below with an engineer-first, self-servable bundle. The economics have collapsed in the buyer's favour: as of August 2026, PostHog's free tier includes one million events a month, and Mixpanel <a href="https://mixpanel.com/blog/mixpanel-pricing-1m-free-events-autocapture/">raised its free allowance from 10,000 to one million events in February 2025</a> — a 100× jump made possible by columnar-store economics and forced by PostHog's pricing. Amplitude's free tier now bundles session replay and feature flags to 50,000 tracked users.</p>
+        <p>Below the event-stream tools sits privacy-first, cookieless web analytics — <a href="https://plausible.io/">Plausible</a> (from $9/month), Fathom, Simple Analytics — which exists largely because Google retired Universal Analytics on <a href="https://blog.google/products/ads-commerce/upgrade-to-google-analytics-4-before-july-1/">July 1, 2023</a> and replaced it with the widely resented GA4, the single biggest demand shock this layer ever had. <strong>Overkill test:</strong> if you cannot name the three events you would define, you do not need an event-analytics tool yet; a pageview counter and a form-submission count will carry you a long way.</p>
+
+        <h3>Experimentation &amp; feature flags: the decide layer</h3>
+        <p>Feature flags decouple <em>deploy</em> from <em>release</em>; experimentation platforms decide which flag state wins. The lineage is unusually clear: almost every serious tool here is somebody's internal system, extracted. <a href="https://launchdarkly.com/about-us/">LaunchDarkly</a> (2014) productized the flag systems of Flickr, Facebook and GitHub. <a href="https://www.geekwire.com/2021/former-facebook-exec-vijaye-raji-leads-new-startup-statsig-help-developers-build-features-quickly/">Statsig</a> (February 2021) is essentially Facebook's internal gating-and-experiments stack rebuilt by Vijaye Raji, who ran Facebook's Seattle engineering office; its customers came to include OpenAI, Notion, Atlassian and Anthropic. <a href="https://en.wikipedia.org/wiki/Optimizely">Optimizely</a> (2010) came out of the 2008 Obama campaign, where Dan Siroker's team A/B-tested the splash page (a family photo beat every video, lifting sign-ups 40.6% and an estimated $60M in donations). <a href="https://www.datadoghq.com/blog/datadog-acquires-eppo/">Eppo</a> (2021, by Airbnb's fourth data scientist) pioneered warehouse-native experimentation — stats computed in <em>your</em> data warehouse rather than a vendor copy. <a href="https://www.growthbook.io/pricing">GrowthBook</a> (2020) is the open-source, self-hostable version of the same idea.</p>
+        <p>Then, in eighteen months, the category was absorbed. Harness bought Split.io (<a href="https://www.prnewswire.com/news-releases/harness-completes-acquisition-of-split-software-302170987.html">closed June 2024</a>). Datadog bought Eppo (<a href="https://www.datadoghq.com/blog/datadog-acquires-eppo/">May 5, 2025</a>, ~$220M reported). And OpenAI bought Statsig outright for <a href="https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/">$1.1&nbsp;billion in stock, announced September 2, 2025</a>, installing Raji as CTO of Applications — an AI lab paying a billion dollars for an experimentation platform is the strongest possible signal of where this book of practice went. The remaining independents are LaunchDarkly, GrowthBook, PostHog, and the <a href="https://www.cncf.io/blog/2023/12/19/openfeature-becomes-a-cncf-incubating-project/">OpenFeature</a> CNCF standard (2022) as the vendor-neutral escape hatch. <strong>Overkill test:</strong> flags earn their keep on any team that deploys more than weekly; a hosted <em>experimentation</em> platform is overkill below roughly a thousand conversions a month — the math in <a href="#smallshop">chapter 8</a> explains why.</p>
+
+        <h3>Session replay &amp; qualitative: watching one user instead of averaging ten thousand</h3>
+        <p>Replay tools reconstruct individual sessions from DOM mutations — the qualitative counterweight to analytics' averages, and the fastest way to find out <em>why</em> a funnel step leaks. FullStory and Hotjar (acquired by Contentsquare, <a href="https://contentsquare.com/press/contentsquare-acquires-hotjar/">September 2021</a>) built the category; <a href="https://learn.microsoft.com/en-us/clarity/faq">Microsoft Clarity</a> (October 2020) then commoditized its low end at exactly $0, free at any scale, with no session caps. PostHog cut its replay prices by more than half in July 2024 in a post titled, accurately, <a href="https://posthog.com/blog/session-replay-pricing">“We've decided to make less money.”</a> <strong>Overkill test:</strong> replay is one of the few tools that is <em>not</em> overkill for small sites — ten minutes of watching real sessions routinely beats a month of dashboard-staring. Enterprise replay (FullStory, quote-based, reported around $199/month entry and six figures at volume as of 2026) is another matter.</p>
+
+        <h3>Performance &amp; real-user monitoring: the loop the browser runs for you</h3>
+        <p>Google's <a href="https://web.dev/blog/inp-cwv-march-12">Core Web Vitals</a> (announced May 2020, a search-ranking factor since June 2021) turned performance into three public numbers, measured on real Chrome users via the CrUX dataset and inspected with Lighthouse and PageSpeed Insights — all free. The metrics themselves iterate: INP replaced FID as the responsiveness vital on <a href="https://web.dev/blog/inp-cwv-march-12">March 12, 2024</a>. Above the free floor sit paid RUM products: Datadog RUM (<a href="https://docs.datadoghq.com/account_management/billing/rum/">$0.15 per 1,000 sessions, as of August 2026</a>), <a href="https://vercel.com/docs/speed-insights/limits-and-pricing">Vercel Speed Insights</a> ($10/project/month), SpeedCurve (acquired by Embrace, <a href="https://embrace.io/blog/embrace-acquires-speedcurve/">November 2025</a>). <strong>Overkill test:</strong> paid RUM is for teams with performance SLOs; everyone else should just check CrUX quarterly, and gate CI on Lighthouse (<a href="#automation">chapter 7</a>).</p>
+
+        <h3>Errors &amp; observability: knowing it broke before the user tells you</h3>
+        <p>Error tracking is the loop's smoke alarm. <a href="https://cra.mr/sentry-from-the-beginning/">Sentry</a> began in 2008 as <span class="num">django-db-log</span>, David Cramer's open-source error logger, and still has a free-forever tier (5,000 errors/month; paid from $26/month as of the <a href="https://sentry.zendesk.com/hc/en-us/articles/40116900282011-How-is-my-plan-changing-August-27-2025">August 2025 plans</a>). The heavyweight end is Datadog and the Prometheus (SoundCloud, 2012; <a href="https://www.cncf.io/projects/prometheus/">second-ever CNCF project, 2016</a>) + Grafana (2014) open-source pair, with <a href="https://opensource.googleblog.com/2019/05/opentelemetry-merger-of-opencensus-and.html">OpenTelemetry</a> (the 2019 OpenCensus/OpenTracing merger, CNCF-graduated May 2026) as the instrumentation standard underneath. The cautionary tale of the layer: Datadog's Q1 2023 earnings call disclosed a single ~$65M customer bill — later <a href="https://newsletter.pragmaticengineer.com/p/datadogs-65myear-customer-mystery">identified by Pragmatic Engineer as Coinbase's 2021 spend</a> — the canonical reminder that observability pricing scales with your data, not your value. <strong>Overkill test:</strong> everyone needs error tracking, from the first user onward; almost nobody small needs full observability.</p>
+
+        <h3>CI/CD &amp; preview deploys: the ship layer</h3>
+        <p>The mechanics of shipping got free and instant in two steps. Netlify introduced <a href="https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/">deploy previews in July 2016</a> — every pull request gets its own URL, making “come look at this” the review workflow. <a href="https://github.blog/changelog/2019-11-11-github-actions-is-generally-available/">GitHub Actions went GA in November 2019</a>, putting a free CI runner (2,000 minutes/month on private repos, unlimited for public ones) next to every repository on earth. Cloudflare Pages (2021) offers unlimited bandwidth and 500 builds a month free. For a static site, the entire ship layer now costs nothing — which is precisely what this page runs on. <strong>Overkill test:</strong> none. This layer is never overkill; it is the substrate.</p>
+
+        <h3>Feedback capture: the unfashionable layer</h3>
+        <p>Structured user-feedback boards (Canny, Featurebase, GitHub Discussions) close the loop qualitatively. Worth knowing: NPS, the survey score bolted onto every product, dates to Fred Reichheld's <a href="https://hbr.org/2003/12/the-one-number-you-need-to-grow">2003 HBR article</a> and has drawn serious methodological criticism since (<a href="https://jmspool.medium.com/net-promoter-score-considered-harmful-and-what-ux-professionals-can-do-about-it-fe7a132f4430">Spool's “NPS Considered Harmful”</a>). For small teams the strongest tool in this layer is embarrassingly simple: a reply-able email address and the discipline to actually call five users. <strong>Overkill test:</strong> paid feedback tooling starts earning its keep when inbound volume exceeds what one person can read.</p>
+
+        <h3>Consolidation and the two-way repricing</h3>
+      </div>
+
+      <div class="tablewrap reveal">
+        <table class="data">
+          <caption>How the loop-tooling market consolidated, 2020–2026</caption>
+          <thead><tr><th scope="col">Date</th><th scope="col">Event</th><th scope="col">What it signalled</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Sept 2020</td><td><a href="https://techcrunch.com/2020/09/03/episerver-acquires-optimizely/">Episerver acquires Optimizely</a>, takes its name in Jan 2021</td><td>The startup A/B-testing icon becomes an enterprise CMS brand</td></tr>
+            <tr><td class="mono">Sept 2021</td><td><a href="https://contentsquare.com/press/contentsquare-acquires-hotjar/">Contentsquare acquires Hotjar</a>; adds Heap in 2023</td><td>Qualitative analytics rolls up around one buyer</td></tr>
+            <tr><td class="mono">June 2024</td><td><a href="https://www.prnewswire.com/news-releases/harness-completes-acquisition-of-split-software-302170987.html">Harness closes Split.io acquisition</a></td><td>Flags &amp; experiments folded into the CI/CD platform</td></tr>
+            <tr><td class="mono">May 2025</td><td><a href="https://www.datadoghq.com/blog/datadog-acquires-eppo/">Datadog acquires Eppo</a> (~$220M reported)</td><td>Observability giant buys warehouse-native experimentation</td></tr>
+            <tr><td class="mono">July 2025</td><td><a href="https://www.june.so/blog/a-new-chapter">June's founding team joins Amplitude</a>; product shut down in 30 days</td><td>The consolidation risk of picking a small vendor, in miniature</td></tr>
+            <tr><td class="mono">Sept 2025</td><td><a href="https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/">OpenAI acquires Statsig for $1.1B</a>; founder becomes CTO of Applications</td><td>An AI lab pays a billion dollars for experimentation infrastructure</td></tr>
+            <tr><td class="mono">Nov 2025</td><td><a href="https://embrace.io/blog/embrace-acquires-speedcurve/">Embrace acquires SpeedCurve</a></td><td>Web-performance monitoring joins mobile observability</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <p>Read the table top to bottom and a pattern appears: every notable independent experimentation vendor was absorbed — by a CMS company, a CI/CD platform, an observability giant, and finally an AI lab. Meanwhile prices moved in <em>two</em> directions at once. Categories with open-source competition got dramatically cheaper: PostHog published two posts literally titled <a href="https://posthog.com/blog/analytics-pricing">“We've decided to make less money”</a> (2024), Mixpanel expanded its free tier 100×, Statsig made flags unlimited and free. Categories without that pressure got more expensive: VWO discontinued its free tier after a private-equity majority investment in 2025, Canny repriced to per-tracked-user in May 2025, Netlify moved new accounts to a credit system in late 2025. The rule of thumb holds across the whole map: <strong>where an open-source alternative exists, the vendor's free tier is generous and growing; where it doesn't, expect the squeeze.</strong> Choose accordingly — the June shutdown gave its customers thirty days.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="automation" aria-labelledby="automation-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 07</span>
+        <h2 id="automation-h">Loops that run themselves</h2>
+        <p class="standfirst">How much of the loop can a machine actually run in 2026? More than skeptics think, less than the demos imply — and the honest answer has a shape: automation climbs a ladder, and each rung is safe exactly in proportion to how narrow, reversible, and machine-verifiable the change is.</p>
+      </div>
+
+      <figure class="viz wide reveal">
+        <div class="viz-card">
+          <p class="viz-title">The autonomy ladder</p>
+          <p class="viz-sub">Each rung hands the machine one more stage of the loop. Status reflects documented production use as of mid-2026.</p>
+          <svg viewBox="0 0 860 478" role="img" aria-label="Ladder diagram of loop automation levels. Rung 1, machine verifies: CI tests, Lighthouse budgets, visual regression — shipped everywhere since around 2000 to 2019. Rung 2, machine allocates: multi-armed bandits shifting traffic between human-authored variants — shipped since 2010 to 2017. Rung 3, machine generates and human approves: coding agents opening draft pull requests, auto-generated fixes — shipped 2023 to 2025 with a human gate by design. Rung 4, machine generates and ships in narrow domains: dependency auto-merge, marketing copy loops — shipped but narrow. Rung 5, machine runs the whole loop from hypothesis to shipped winner — demos only, no documented production case at a named company.">
+            <g font-size="13">
+              <!-- steps -->
+              <g stroke="var(--border)">
+                <rect x="20"  y="376" width="820" height="82" rx="10" fill="var(--surface-2)"/>
+                <rect x="120" y="286" width="720" height="82" rx="10" fill="var(--surface-2)"/>
+                <rect x="220" y="196" width="620" height="82" rx="10" fill="var(--surface-2)"/>
+                <rect x="320" y="106" width="520" height="82" rx="10" fill="var(--surface-2)"/>
+                <rect x="420" y="16"  width="420" height="82" rx="10" fill="var(--accent-wash)" stroke-dasharray="5 4"/>
+              </g>
+              <g fill="var(--ink)" font-weight="650" font-size="14">
+                <text x="40"  y="402">1 · Machine verifies</text>
+                <text x="140" y="312">2 · Machine allocates</text>
+                <text x="240" y="222">3 · Machine generates, human approves</text>
+                <text x="340" y="132">4 · Machine generates <tspan font-style="italic">and ships</tspan> — narrow domains</text>
+                <text x="440" y="42">5 · Machine runs the whole loop</text>
+              </g>
+              <g fill="var(--ink-2)" font-size="12.5">
+                <text x="40"  y="423">CI tests · Lighthouse budgets · visual regression · evals</text>
+                <text x="140" y="333">bandits shift traffic between human-authored variants</text>
+                <text x="240" y="243">coding agents → draft PRs · auto-generated fixes</text>
+                <text x="340" y="153">dependency auto-merge · marketing-copy loops</text>
+                <text x="440" y="63">hypothesis → variant → test → ship, unattended</text>
+              </g>
+              <g font-size="11.5" font-weight="650">
+                <text x="40"  y="444" fill="var(--good-text)">SHIPPED · everywhere · ~2000–2019</text>
+                <text x="140" y="354" fill="var(--good-text)">SHIPPED · 2010–2017</text>
+                <text x="240" y="264" fill="var(--good-text)">SHIPPED 2023–25 · human gate by design</text>
+                <text x="340" y="174" fill="var(--ink-2)">SHIPPED · narrow &amp; reversible only</text>
+                <text x="440" y="84"  fill="var(--bad-text)">DEMOS · no documented production case</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Placement per the sources cited through this chapter. The dashed top rung is the honest boundary: as of mid-2026 no named company has documented an agent designing, shipping and concluding its own product experiment end-to-end in production.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h3>Rung 1: the machine as gatekeeper (old, boring, load-bearing)</h3>
+        <p>Everything above it stands on this rung. CI has blocked bad merges since CruiseControl (2001). <a href="https://web.dev/blog/lighthouse-evolution-cds-2019">Lighthouse CI</a> (Google, 2019) made performance a blockable assertion — budgets in a JSON file, checked on every commit — after Alex Russell spent years arguing that unbudgeted performance always regresses; Addy Osmani's <a href="https://medium.com/@addyosmani/a-tinder-progressive-web-app-performance-case-study-78919d98ece0">Tinder case study</a> (December 2017) showed budgets holding a real product's bundle at ~155KB. Visual regression testing — Percy (acquired by BrowserStack, July 2020), Chromatic from the Storybook team, and Playwright's built-in <span class="num">toHaveScreenshot()</span> — extended the gate to pixels: humans review rendered diffs, not code. None of this is AI. All of it is the precedent that matters: <strong>a machine already blocks your ship decision, and nobody minds, because the check is deterministic and the change is revertible.</strong></p>
+
+        <h3>Rung 2: the machine as traffic allocator</h3>
+        <p>A multi-armed bandit doesn't wait for a fixed-horizon verdict; it continuously shifts traffic toward the currently-winning variant, trading statistical certainty for lower regret. The production lineage is real and dated: Yahoo's front page ran contextual bandits for news ranking (<a href="https://arxiv.org/abs/1003.0146">Li et al., WWW 2010</a> — the LinUCB paper); the Washington Post built <a href="https://www.washingtonpost.com/pr/wp/2016/02/08/the-washington-post-unveils-new-real-time-content-testing-tool-bandito/">Bandito</a> (February 2016) so editors' headline variants reallocate automatically; Amazon deployed Thompson-sampling multivariate optimisation on its retail page (<a href="https://blog.acolyer.org/2017/09/27/an-efficient-bandit-algorithm-for-real-time-multivariate-optimization/">KDD 2017</a>); Netflix's <a href="https://netflixtechblog.com/artwork-personalization-c589f074ad76">artwork personalisation</a> (December 2017) turned chapter 5's thumbnail tests into a per-member contextual bandit. By now it's commodity — Statsig's Autotune, Optimizely's Stats Accelerator, VWO's bandit mode.</p>
+        <p>Know when the rung breaks. Bandits are right for short-lived content with fast reward signals — headlines, promotions, artwork. They are wrong when rewards are slow (retention, revenue-per-account: nothing arrives for the algorithm to learn from), when novelty effects make early appeal decay (a bandit over-commits to the shiny variant a fixed-split test would have caught), and when you care about guardrail metrics, because a single-objective optimiser will cheerfully trade your retention for its click-rate. <a href="https://www.geteppo.com/blog/bandit-or-experiment">Eppo's practitioner guidance</a> also notes that naively running significance tests on bandit-allocated data inflates false positives. The rule of thumb: bandits for <em>picking among creatives</em>, fixed-horizon experiments for <em>learning things you'll reuse</em>.</p>
+
+        <h3>Rung 3: the machine as author, with a human gate</h3>
+        <p>2025 was the year every major vendor shipped the same design. GitHub's Copilot coding agent (<a href="https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/">May 19, 2025</a>) takes an assigned issue, works in an ephemeral Actions environment, and opens a <em>draft</em> PR it cannot approve or merge. OpenAI's Codex (May 2025) sandboxes each task and proposes PRs. Anthropic's <a href="https://github.com/anthropics/claude-code-action">Claude Code GitHub Action</a> responds to <span class="num">@claude</span> mentions on issues and PRs. Google's Jules went GA August 6, 2025. Cursor added BugBot PR review (June 2025). Sentry's Autofix/Seer (from March 2024) root-causes production errors and drafts the fix. The convergent choice of a human gate is not timidity — it is the industry reading its own data: DORA's 2024–25 finding (<a href="#trends">chapter 3</a>) that AI adoption dents delivery stability is precisely the argument for keeping verification human-anchored while generation scales.</p>
+        <p>The cautionary tale rounding out the rung: Devin, announced March 2024 as “the first AI software engineer,” whose launch demo was <a href="https://news.ycombinator.com/item?id=40008109">publicly picked apart</a> within weeks (the “completed Upwork task” wasn't the task the client asked for), and which independent testers in early 2025 found completing roughly 3 of 20 assigned tasks. The product survived and matured — Cognition later absorbed Windsurf (July 2025) — but the episode fixed the genre's rule: <strong>benchmark the workflow, not the demo.</strong></p>
+
+        <h3>Rung 4: closed loops that actually ship — and why those</h3>
+        <p>The oldest fully-closed code-shipping loop in production is nobody's idea of AI: <strong>dependency bots</strong>. Renovate and Dependabot (acquired by GitHub, May 2019) open version-bump PRs, and with auto-merge-on-green configured, bot-authored changes ship with no human in the loop — at massive scale, for years, safely. The reason is a checklist, and it is the whole theory of this chapter: the change class is <em>narrow</em> (a version string), <em>machine-verifiable</em> (CI green), and <em>reversible</em> (revert the bump). Marketing-copy optimisation loops (Persado, Phrasee) have generated-tested-shipped subject lines since the late 2010s — inside constrained language libraries with brand approval workflows, i.e., the same checklist. Evolutionary web-page optimisation (Sentient Ascend, 2016, later Evolv AI, described in <a href="https://dl.acm.org/doi/10.1609/aimag.v41i1.5256"><em>AI Magazine</em>, 2020</a>) breeds page variants against a conversion metric — but humans still define the gene pool and the fitness function. Note what all the shipped closed loops share: <em>the machine never chooses the metric.</em></p>
+
+        <h3>Rung 5 — and the eval layer that might eventually support it</h3>
+        <p>For AI products, the regression suite itself had to be reinvented: model behaviour isn't unit-testable, so teams gate on <strong>evals</strong> — curated task suites scored by assertions or by a stronger model. The LLM-as-judge foundation is <a href="https://arxiv.org/abs/2306.05685">Zheng et al. (June 2023)</a>: GPT-4-as-grader agreed with human raters ~85% of the time — more than humans agreed with each other (~81%) — while exhibiting measurable position bias (order changes verdicts), verbosity bias (longer looks better) and self-enhancement bias. Practitioner doctrine crystallised in Hamel Husain's <a href="https://hamel.dev/blog/posts/evals/">“Your AI Product Needs Evals”</a> (March 2024); tooling (Braintrust, promptfoo, LangSmith) now wires eval scores into CI as blocking checks. Honesty about the state of practice: the tooling for hard-gating deploys on eval scores is real and sold, but public case studies of teams actually blocking releases on LLM-judge scores are thinner than the marketing — much production practice remains “run the evals, a human reads the dashboard.” And the recursion is unsolved: the judge drifts and biases like any model, so the regression suite now needs its own regression suite.</p>
+        <p>Where must the human stay, then? Four places, each earned by a failure mode above: <strong>choosing the metric</strong> (every optimiser maximises exactly what you said, not what you meant); <strong>guardrails and non-stationarity</strong> (bandits and novelty); <strong>irreversible or slow-feedback changes</strong> (pricing, migrations, anything whose reward arrives in weeks); and <strong>review of generated changes</strong> (the DORA stability data, the draft-PR consensus). The pattern to bet on for the rest of the decade is not the self-driving product team. It is the ratchet: each year, another narrow change-class becomes boring enough — verifiable enough, reversible enough — to hand to the machines, exactly as version bumps did.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="smallshop" aria-labelledby="smallshop-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 08</span>
+        <h2 id="smallshop-h">The small-shop loop</h2>
+        <p class="standfirst">Everything so far scales down — except the statistics. A solo designer maintaining a handful of client sites can run a real, honest loop for $0–9 a month and 30 minutes a month. What they cannot do is A/B test, and the arithmetic proving it is the most useful thing in this chapter.</p>
+      </div>
+
+      <div class="prose">
+        <h3>First, the bad news: the math</h3>
+        <p>The standard power calculation (the one behind <a href="https://www.evanmiller.org/ab-testing/sample-size.html">Evan Miller's sample-size calculator</a>: 80% power, 5% significance, two-sided) says that to detect a 20% relative improvement on a 3% baseline conversion rate — 3.0% → 3.6%, a <em>good</em> result by any professional standard — you need roughly <strong>13,900 visitors per arm, about 27,800 in total</strong>. A local-business site getting 500 visits a month would need about <strong>four and a half years</strong>. And that's the easy case: detecting the 2%-relative wins that Bing and Google celebrate would take that site multiple decades. Checking the results daily and stopping when significance flickers doesn't rescue you — it manufactures false positives, which is exactly the “peeking” problem Evan Miller dissected in <a href="https://www.evanmiller.org/how-not-to-run-an-ab-test.html">“How Not To Run an A/B Test”</a> (2010). These are computed from the standard formula, not quoted from anyone — check them yourself; the formula doesn't negotiate.</p>
+      </div>
+
+      <figure class="viz reveal">
+        <div class="viz-card">
+          <p class="viz-title">Months of A/B testing needed at 500 visits/month</p>
+          <p class="viz-sub">3% baseline conversion · 80% power · α = 0.05, two-sided · both arms combined</p>
+          <svg viewBox="0 0 620 250" role="img" aria-label="Bar chart showing months of A/B testing required at 500 visits per month with a 3 percent baseline conversion rate. Detecting a 100 percent relative lift, a doubling, takes about 3 months. Detecting a 50 percent lift takes about 10 months. Detecting a 20 percent lift takes about 56 months — nearly five years.">
+            <g font-size="13">
+              <line x1="40" y1="190" x2="590" y2="190" stroke="var(--baseline)" stroke-width="1"/>
+              <g fill="var(--s1)">
+                <rect x="103" y="181" width="24" height="9" rx="3"/>
+                <rect x="283" y="160" width="24" height="30" rx="4"/>
+                <rect x="283" y="186" width="24" height="4"/>
+                <rect x="463" y="22" width="24" height="168" rx="4"/>
+                <rect x="463" y="186" width="24" height="4"/>
+              </g>
+              <g fill="var(--ink)" text-anchor="middle" font-weight="650">
+                <text x="115" y="172">~3 mo</text>
+                <text x="295" y="151">~10 mo</text>
+                <text x="475" y="14">~56 months</text>
+              </g>
+              <g fill="var(--ink-2)" text-anchor="middle">
+                <text x="115" y="212">detect a doubling</text>
+                <text x="115" y="228">(3% → 6%)</text>
+                <text x="295" y="212">detect +50%</text>
+                <text x="295" y="228">(3% → 4.5%)</text>
+                <text x="475" y="212">detect +20%</text>
+                <text x="475" y="228">(3% → 3.6%)</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption><span class="src">Computed from the standard two-proportion power formula (methodology per <a href="https://www.evanmiller.org/ab-testing/sample-size.html">Evan Miller's calculator</a>), August 2026. The practical reading: at small-site traffic, only effects big enough to see without statistics are detectable with statistics.</span></figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>The conclusion is liberating, not defeating: <strong>stop pretending to a methodology you don't have traffic for, and use the ones you do.</strong> Three replacements, in order of value. First, <em>before/after on large effects only</em> — if you rewrite the landing page and calls don't visibly change over the next two months, the honest verdict is “no detectable effect,” and that's a finding. Second, <em>watch five real people use the site</em> — Jakob Nielsen's classic argument (<a href="https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/">2000</a>) that a handful of users surfaces most usability problems still holds, and at this scale one confused visitor on a Clarity replay is worth a quarter of dashboard data. Third, <em>ask the customers where they came from</em> — for local service businesses most conversions are phone calls anyway (in Ruler Analytics' industry data, over half of legal-sector conversions arrive by phone), and “how did you find us?” is free.</p>
+
+        <h3>The stack: $0–9 a month, one afternoon to set up</h3>
+      </div>
+
+      <div class="tablewrap reveal">
+        <table class="data">
+          <caption>A complete small-shop measurement stack (prices as of August 2026)</caption>
+          <thead><tr><th scope="col">Job</th><th scope="col">Tool</th><th scope="col">Cost</th><th scope="col">Note</th></tr></thead>
+          <tbody>
+            <tr><td>Traffic &amp; referrers</td><td><a href="https://www.cloudflare.com/press/press-releases/2020/cloudflare-announces-web-analytics-a-privacy-first-free-alternative-for-all/">Cloudflare Web Analytics</a> or <a href="https://plausible.io/">Plausible</a></td><td class="mono">$0 / $9 mo</td><td>Cookieless — no consent banner needed</td></tr>
+            <tr><td>Watching real sessions</td><td><a href="https://clarity.microsoft.com/">Microsoft Clarity</a></td><td class="mono">$0</td><td>Free at any scale; ~30-day replay retention</td></tr>
+            <tr><td>Search queries &amp; ranking</td><td><a href="https://search.google.com/search-console/about">Google Search Console</a></td><td class="mono">$0</td><td>The only source of query-level data</td></tr>
+            <tr><td>Calls &amp; directions</td><td>Google Business Profile</td><td class="mono">$0</td><td>Where local customers actually convert</td></tr>
+            <tr><td>Performance</td><td><a href="https://pagespeed.web.dev/">PageSpeed Insights</a> / CrUX</td><td class="mono">$0</td><td>Check quarterly, not weekly</td></tr>
+            <tr><td>Uptime</td><td><a href="https://uptimerobot.com/pricing/">UptimeRobot</a> or a cron ping</td><td class="mono">$0–7 mo</td><td>Free tier is now personal-use-only — read the terms</td></tr>
+            <tr><td>Errors (if the site has JS)</td><td><a href="https://sentry.io/">Sentry</a> free tier</td><td class="mono">$0</td><td>5k errors/mo — plenty</td></tr>
+            <tr><td>Hosting &amp; previews</td><td>Cloudflare Pages / Netlify / GitHub Pages</td><td class="mono">$0</td><td>Preview deploys = your staging environment</td></tr>
+            <tr><td>Event analytics (only if product-like)</td><td><a href="https://posthog.com/">PostHog</a></td><td class="mono">$0 to 1M events</td><td>Overkill for a brochure site — skip until you have flows</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <p>Just as important is the ignore list. At small-site scale: ignore bounce rate (it mostly measures whether people found the phone number fast, which is <em>success</em> for a local business); ignore session duration; ignore rankings for vanity keywords; ignore Lighthouse points beyond “green”; ignore every dashboard a tool emails you weekly. Instrumenting more than you'll review is how the loop dies of guilt.</p>
+
+        <h3>Worked example: the landscaping company</h3>
+        <p>Say you maintain the site for a local landscaping company — a five-page brochure site, 400–800 visits a month, mostly from Google. The loop's entire measurement layer is <strong>three numbers</strong>, reviewed monthly:</p>
+        <ul>
+          <li><strong>Leads: calls + form submissions.</strong> The number the business actually feels. Count both — a <span class="num">tel:</span> click event and the form's thank-you page are enough instrumentation. Typical months might see 8–25. This is the only number that justifies the site's existence.</li>
+          <li><strong>Google Business Profile actions</strong> — calls, direction requests, website clicks from the profile. For many local businesses this <em>is</em> the funnel; industry studies consistently show a typical profile driving tens of actions a month, and only a small fraction of profile views becoming actions. If the profile outperforms the site, the profile is where next month's 30 minutes go.</li>
+          <li><strong>Search clicks for money queries</strong> (Search Console) — “landscaper &lt;town&gt;,” “patio installation &lt;county&gt;.” Impressions tell you whether you're visible; clicks tell you whether the title and snippet earn the visit.</li>
+        </ul>
+        <p>What does a <em>meaningful</em> change look like at this traffic? Rough honesty: with ~15 leads a month, random variation of ±4–5 is normal (Poisson noise alone: √15 ≈ 4). So 14 versus 17 leads is weather, not signal. The changes worth reacting to are the ones that clear the noise band: leads doubling or halving over two consecutive months, a money query gaining or losing a page of ranking, calls-from-profile diverging from calls-from-site. Everything inside the band gets written down and left alone — that discipline is the small-shop version of chapter 1's “fixed horizon.”</p>
+        <p>And the 30-minute monthly review, concretely: <em>minutes 0–5</em>, write down the three numbers next to last month's. <em>5–10</em>: uptime and error check, PageSpeed if it's the quarterly month. <em>10–20</em>: watch two or three Clarity replays of real visitors — this is where actual insight lives. <em>20–30</em>: one decision, written as a sentence — “change nothing,” or one specific change with the number it should move and when you'll check (“rewrite the hero to lead with the phone number; expect calls up by month's end of next month”). One change per month, maximum. A year of that is twelve honest experiments — which, per the chart above, is more statistical throughput than A/B testing would have given you in a decade.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="stopping" aria-labelledby="stopping-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Chapter 09</span>
+        <h2 id="stopping-h">Knowing when to stop</h2>
+        <p class="standfirst">The dirty secret of the iteration gospel: the loop has no built-in off switch. Every practice in this piece makes changing things easier, cheaper, and more habitual — and none of them tells you when a thing is done. That skill has to be installed separately, and the teams and tools that installed it are the ones that compound instead of churn.</p>
+      </div>
+
+      <div class="prose">
+        <p>Start from the base rate one more time, because it changes the economics of tinkering. If roughly <a href="https://hbr.org/2017/09/the-surprising-power-of-online-experiments">80–90% of tested ideas fail to move their metric</a> at companies with the best experimenters and millions of users, then the expected value of one more speculative tweak to an already-working small site is <em>low and usually negative once you price your time</em>. Big platforms escape this by running thousands of cheap tries in parallel. You cannot. For a small shop, the Kohavi failure rate isn't an argument for testing more — it's an argument for tinkering less and choosing better-motivated changes when you do.</p>
+
+        <h3>Stopping rules you can actually adopt</h3>
+        <p><strong>Write “done” down before you start.</strong> Scrum's Definition of Done is the industrial version — a formal description of the state in which work counts as complete. The solo version is one sentence in the project file: “This site is done when it loads fast, states the services, shows real photos, and the phone number is one tap away.” When the site meets the sentence, changes need a <em>reason</em>, not a mood.</p>
+        <p><strong>Fix the budget, not the scope.</strong> Basecamp's <em>Shape Up</em> (2019) runs on “appetite” — decide what the work is <em>worth</em> in weeks before starting, and when the budget is spent, the default is that the project <em>stops</em>, not extends: the circuit breaker. Unshipped work must re-earn its slot by being re-pitched. It is the organisational version of the experimenter's fixed horizon — decide in advance when you'll stop, because deciding mid-flight is where all the self-deception lives (that is exactly the peeking problem from <a href="#smallshop">chapter 8</a>, applied to effort instead of significance).</p>
+        <p><strong>Compare effect size to noise before acting.</strong> The √n rule from chapter 8 generalises: any change whose plausible effect is smaller than your metric's month-to-month wobble is unfalsifiable at your scale — you will never know whether it worked, which means it isn't iteration, it's redecorating. Herbert Simon gave the underlying principle its name in 1956: <em>satisficing</em>. Organisms that survive don't optimise; they find good enough and move on — because search has costs and the environment changes under you anyway.</p>
+        <p><strong>Charge yourself opportunity cost.</strong> An hour polishing a site that's meeting its definition of done is an hour taken from the client's Google Business Profile, from the next client, from the work that actually moves anything. 37signals said it flatly in <em>Getting Real</em> (2006), in a chapter title that is itself a stopping rule: “It Just Doesn't Matter.” Most proposed work doesn't.</p>
+        <p><strong>Beware the metric that became a target.</strong> Goodhart's law — Strathern's phrasing: “when a measure becomes a target, it ceases to be a good measure” — is a stopping rule too: when you notice you're optimising the Lighthouse score rather than the site, the number has detached from the thing it measured, and continuing is motion without progress.</p>
+
+        <h3>Maintenance mode is a legitimate end state</h3>
+        <p>The loop's literature almost never says this, so it needs saying plainly: <strong>a product can be finished.</strong> Maintenance mode — dependencies updated, backups verified, uptime watched, content kept true (hours, prices, seasonal photos), and <em>nothing else</em> — is not failure; it is the correct steady state for a site whose job hasn't changed. Craigslist ran essentially unchanged for two decades at ~$700M a year with 50 people (<a href="#compound">chapter 4</a>); its stillness was a strategy, priced and chosen. The caveat travels with it: stopping is safe where your position is defended (a moat, a locked-in local customer base, a done job) and dangerous where it isn't — which is why the decision to stop should be revisited on a calendar, not on a feeling. Once or twice a year, run the loop <em>on the decision itself</em>: has the business changed? has the traffic changed? did a competitor? If no, no, and no — back to sleep.</p>
+
+        <h3>Needs work, or do you just itch?</h3>
+        <p>Which leaves the honest final question, the one every designer-developer knows from the inside: the site is fine and you want to rebuild it anyway. The itch is real, but it is information about <em>you</em> — your taste moved on, you learned a new technique, you're bored — not about the site. Users do not see your CSS architecture. The tree below is the whole discipline of this chapter in one diagram; the point of the loop was never that you must always turn it. It's that <em>turning it or not becomes a decision you make on purpose, with evidence, instead of a compulsion.</em></p>
+      </div>
+
+      <figure class="viz wide reveal">
+        <div class="viz-card">
+          <p class="viz-title">Does this site need work — or do you just itch?</p>
+          <p class="viz-sub">Run it monthly. Four questions, in order. The order is the discipline.</p>
+          <svg viewBox="0 0 860 520" role="img" aria-label="Decision tree. Question one: is a tracked number — leads, errors, speed — outside its normal noise band? If yes: real work — define the change, its expected effect, and the check date. If no, question two: has the business itself changed — services, prices, season? If yes: content maintenance — update the facts and stop. If no, question three: did a real user report a problem, or did a session replay show confusion? If yes: fix that one thing, nothing else. If no, question four: can you write down which number this change should move, by how much, and when you will check? If yes: that is a legitimate experiment — schedule it inside a fixed budget. If no: you itch. Close the laptop; put the energy into the profile, the next client, or a walk.">
+            <g font-size="13">
+              <!-- Q1 -->
+              <rect x="20" y="24" width="380" height="58" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="40" y="48" fill="var(--ink)" font-weight="650">1 · Is a tracked number outside its noise band?</text>
+              <text x="40" y="68" fill="var(--ink-2)" font-size="12">leads · errors · speed · rankings</text>
+              <rect x="480" y="24" width="360" height="58" rx="10" fill="var(--accent-wash)" stroke="var(--accent)"/>
+              <text x="500" y="48" fill="var(--ink)" font-weight="650">Real work.</text>
+              <text x="500" y="68" fill="var(--ink-2)" font-size="12">Define the change, expected effect, and check date.</text>
+              <line x1="400" y1="53" x2="472" y2="53" stroke="var(--ink-3)" stroke-width="1.75" marker-end="url(#arr)"/>
+              <text x="436" y="44" fill="var(--good-text)" font-size="12" text-anchor="middle" font-weight="650">yes</text>
+
+              <!-- Q2 -->
+              <rect x="20" y="134" width="380" height="58" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="40" y="158" fill="var(--ink)" font-weight="650">2 · Has the business itself changed?</text>
+              <text x="40" y="178" fill="var(--ink-2)" font-size="12">new services · prices · hours · season</text>
+              <rect x="480" y="134" width="360" height="58" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+              <text x="500" y="158" fill="var(--ink)" font-weight="650">Content maintenance.</text>
+              <text x="500" y="178" fill="var(--ink-2)" font-size="12">Update the facts. Then stop.</text>
+              <line x1="400" y1="163" x2="472" y2="163" stroke="var(--ink-3)" stroke-width="1.75" marker-end="url(#arr)"/>
+              <text x="436" y="154" fill="var(--good-text)" font-size="12" text-anchor="middle" font-weight="650">yes</text>
+
+              <!-- Q3 -->
+              <rect x="20" y="244" width="380" height="58" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="40" y="268" fill="var(--ink)" font-weight="650">3 · Did a real user hit a real problem?</text>
+              <text x="40" y="288" fill="var(--ink-2)" font-size="12">a complaint · a confused session replay · a bounced task</text>
+              <rect x="480" y="244" width="360" height="58" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+              <text x="500" y="268" fill="var(--ink)" font-weight="650">Fix that one thing.</text>
+              <text x="500" y="288" fill="var(--ink-2)" font-size="12">Only that thing. Resist the “while I'm in here.”</text>
+              <line x1="400" y1="273" x2="472" y2="273" stroke="var(--ink-3)" stroke-width="1.75" marker-end="url(#arr)"/>
+              <text x="436" y="264" fill="var(--good-text)" font-size="12" text-anchor="middle" font-weight="650">yes</text>
+
+              <!-- Q4 -->
+              <rect x="20" y="354" width="380" height="58" rx="10" fill="var(--surface-2)" stroke="var(--border)"/>
+              <text x="40" y="378" fill="var(--ink)" font-weight="650">4 · Can you name the number it should move,</text>
+              <text x="40" y="396" fill="var(--ink)" font-weight="650">by how much, and when you'll check?</text>
+              <rect x="480" y="354" width="360" height="58" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+              <text x="500" y="378" fill="var(--ink)" font-weight="650">A legitimate experiment.</text>
+              <text x="500" y="396" fill="var(--ink-2)" font-size="12">Schedule it inside a fixed appetite.</text>
+              <line x1="400" y1="383" x2="472" y2="383" stroke="var(--ink-3)" stroke-width="1.75" marker-end="url(#arr)"/>
+              <text x="436" y="374" fill="var(--good-text)" font-size="12" text-anchor="middle" font-weight="650">yes</text>
+
+              <!-- verdict -->
+              <rect x="20" y="452" width="820" height="52" rx="10" fill="var(--surface-2)" stroke="var(--baseline)"/>
+              <text x="40" y="474" fill="var(--ink)" font-weight="650">You itch.</text>
+              <text x="40" y="493" fill="var(--ink-2)" font-size="12.5">The site is fine. Close the laptop — spend the energy on the profile, the next client, or a walk. Re-run this next month.</text>
+
+              <!-- no-arrows down the left -->
+              <g stroke="var(--ink-3)" stroke-width="1.75" fill="none">
+                <line x1="210" y1="82" x2="210" y2="126" marker-end="url(#arr)"/>
+                <line x1="210" y1="192" x2="210" y2="236" marker-end="url(#arr)"/>
+                <line x1="210" y1="302" x2="210" y2="346" marker-end="url(#arr)"/>
+                <line x1="210" y1="412" x2="210" y2="444" marker-end="url(#arr)"/>
+              </g>
+              <g fill="var(--ink-3)" font-size="12" font-weight="650">
+                <text x="222" y="108">no</text>
+                <text x="222" y="218">no</text>
+                <text x="222" y="328">no</text>
+                <text x="222" y="432">no</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption>The order encodes the priorities: measured signal beats business fact beats user anecdote beats designer instinct — and instinct still gets a lane, provided it can state a falsifiable expectation.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>A closing thought that earns the site its name. “Never done” was this piece's title, and every chapter has argued that the loop, in general, shouldn't stop: the practice of iteration — across a century of factories, pipelines, and platforms — is the most reliably compounding capability an organisation can own. But the loop is a tool with a purpose, and on any <em>particular</em> product, on any particular month, the strongest move the loop can produce is the one Craigslist made for twenty years and the one the tree above ends with: <strong>a deliberate, evidenced, revisitable decision to leave it alone.</strong> Never done — but not, therefore, always doing.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="sources" aria-labelledby="sources-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Appendix</span>
+        <h2 id="sources-h">Sources &amp; method</h2>
+        <p class="standfirst">Every dated or numeric claim on this page carries an inline link at the point of use — that is the citation system. This appendix lists the load-bearing primary sources and states the method honestly.</p>
+      </div>
+      <div class="prose">
+        <h3>Method</h3>
+        <p>Researched and written in August 2026 in a single automated session. Claims were verified against primary sources — papers, engineering blogs, shareholder letters, official report PDFs, npm registry data — wherever possible; where the research environment could reach only search-indexed excerpts or mirrors of a primary source, the text says so or hedges accordingly. Release-cadence figures for Claude Code, Codex and Next.js were computed directly from the public npm registry on August 19, 2026. Sample-size figures are computed from the standard two-proportion power formula, not quoted. Famous stories that rest on retellings rather than primary documents (Spotify's Discover Weekly bug, the $200M blue) are labelled as such in place. Corrections are welcome via <a href="https://github.com/esmrsky/never-done">the repository</a>.</p>
+        <h3>The sources that carry the most weight</h3>
+        <ul>
+          <li>Ron Kohavi et al., <a href="https://www.exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf">“Online Controlled Experiments at Large Scale”</a> (KDD 2013); Kohavi &amp; Thomke, <a href="https://hbr.org/2017/09/the-surprising-power-of-online-experiments">“The Surprising Power of Online Experiments”</a> (HBR, 2017); Kohavi, Tang &amp; Xu, <a href="https://experimentguide.com/"><em>Trustworthy Online Controlled Experiments</em></a> (Cambridge, 2020).</li>
+          <li>DORA / Accelerate State of DevOps report PDFs, <a href="https://dora.dev/research/">dora.dev/research</a> — 2016, 2018, 2019, 2021, 2023, 2024, and the 2025 AI-assisted development report.</li>
+          <li>Stefan Thomke, <a href="https://hbr.org/2020/03/building-a-culture-of-experimentation">“Building a Culture of Experimentation”</a> (HBR, 2020) and <em>Experimentation Works</em> (HBS Press, 2020).</li>
+          <li>Primary process history: <a href="https://www.praxisframework.org/files/royce1970.pdf">Royce (1970)</a>, <a href="https://dl.acm.org/doi/10.1145/12944.12948">Boehm (1986)</a>, <a href="http://www.jeffsutherland.org/oopsla/schwapub.pdf">Schwaber (OOPSLA '95)</a>, <a href="https://agilemanifesto.org/history.html">agilemanifesto.org</a>, <a href="https://martinfowler.com/articles/originalContinuousIntegration.html">Fowler &amp; Foemmel (2000)</a>, <a href="https://deming.org/wp-content/uploads/2020/06/PDSA_History_Ron_Moen.pdf">Moen's PDSA history</a>.</li>
+          <li>The DevOps moment, from the people in the room: <a href="https://www.kitchensoap.com/2009/06/23/slides-for-velocity-talk-2009/">Allspaw &amp; Hammond (Velocity 2009)</a>, <a href="https://timothyfitz.com/2009/02/10/continuous-deployment-at-imvu-doing-the-impossible-fifty-times-a-day/">Fitz on IMVU (2009)</a>, <a href="https://code.flickr.net/2009/12/02/flipping-out/">Flickr's “Flipping Out” (2009)</a>, <a href="https://codeascraft.com/2010/05/20/quantum-of-deployment/">Etsy's Code as Craft (2010–15)</a>.</li>
+          <li>Company primary documents: <a href="https://s2.q4cdn.com/299287126/files/doc_financials/annual/2013-Letter-to-Shareholders.pdf">Amazon shareholder letters (2013</a>, <a href="https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF">2015)</a>, <a href="https://netflixtechblog.com/its-all-a-bout-testing-the-netflix-experimentation-platform-4e1ca458c15">Netflix TechBlog (2016–17)</a>, <a href="https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth">Mazal on Duolingo (2023)</a>, <a href="https://github.blog/2021-04-27-ship-code-faster-safer-feature-flags/">GitHub on feature flags (2021)</a>, <a href="https://hbr.org/2011/04/how-i-did-it-blockbusters-former-ceo-on-sparring-with-an-activist-shareholder">Antioco in HBR (2011)</a>, <a href="https://journals.sagepub.com/doi/10.1177/0001839215606951">Vuori &amp; Huy on Nokia (ASQ, 2016)</a>.</li>
+          <li>Measurement's regulatory decade: <a href="https://webkit.org/blog/7675/intelligent-tracking-prevention/">WebKit ITP posts (2017–19)</a>, <a href="https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html">Chromium (2020)</a>, <a href="https://privacysandbox.com/news/privacy-sandbox-next-steps/">Privacy Sandbox statements (2024–25)</a>.</li>
+          <li>The AI turn: <a href="https://arxiv.org/abs/2306.05685">Zheng et al. on LLM-as-judge (2023)</a>, <a href="https://hamel.dev/blog/posts/evals/">Husain on evals (2024)</a>, <a href="https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/">GitHub (2025)</a>, <a href="https://openai.com/index/introducing-codex/">OpenAI (2025)</a>, <a href="https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/">the Statsig acquisition (2025)</a>, and the <a href="https://dora.dev/research/2024/dora-report/">DORA 2024</a>/<a href="https://dora.dev/research/2025/dora-report/">2025</a> reports.</li>
+          <li>Stopping: <a href="https://basecamp.com/shapeup"><em>Shape Up</em></a> (2019), <a href="https://gettingreal.37signals.com/"><em>Getting Real</em></a> (2006), <a href="https://www.evanmiller.org/how-not-to-run-an-ab-test.html">Evan Miller (2010)</a>, <a href="https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/">Nielsen (2000)</a>, Simon's satisficing (1956), <a href="https://quoteinvestigator.com/2017/12/29/god-data/">Quote Investigator on the Deming misattribution</a>.</li>
+        </ul>
+      </div>
+    </section>
+
 
     <footer class="site-footer">
       <p><strong>Never Done</strong> — researched, written, illustrated and shipped from a single automated session, August 2026. Hand-written HTML, CSS and JavaScript; no framework, no build step, no tracking.</p>
