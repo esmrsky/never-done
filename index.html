@@ -23,6 +23,7 @@
   <nav class="toc" aria-label="Table of contents">
     <p class="toc-title">Never Done</p>
     <ol>
+      <li><a href="#updates"><span class="n">—</span> Updates, October 2026</a></li>
       <li><a href="#loop"><span class="n">01</span> The loop itself</a></li>
       <li><a href="#timeline"><span class="n">02</span> A century of shrinking loops</a></li>
       <li><a href="#trends"><span class="n">03</span> What is moving right now</a></li>
@@ -70,8 +71,25 @@
           <text x="320" y="138" font-size="13" fill="var(--ink-3)" text-anchor="middle" font-style="italic" font-family="Georgia, serif">and again, and again, and again&#8230;</text>
         </svg>
       </div>
-      <p class="hero-meta"><span>A long read — about an hour</span><span>Researched &amp; written August 2026</span><span>Every dated claim is linked to a source</span></p>
+      <p class="hero-meta"><span>A long read — about an hour</span><span>Researched &amp; written August 2026 · Updated October 22, 2026</span><span>Every dated claim is linked to a source</span></p>
     </header>
+
+    <section class="chapter" id="updates" aria-labelledby="updates-h">
+      <div class="chapter-head reveal">
+        <span class="ch-no">Update</span>
+        <h2 id="updates-h">Updates, October 2026</h2>
+      </div>
+
+      <div class="prose">
+        <p>We checked the field again on October 22, 2026. Each item below carries its own publication date. We found no major new study from September or October 2026, so these are the newest we could confirm.</p>
+        <p><strong>CircleCI's 2026 State of Software Delivery (February 18, 2026).</strong> The report analyzed more than 28 million CI/CD workflows, not surveys. Average daily workflow runs <a href="https://circleci.com/blog/five-takeaways-2026-software-delivery-report">rose 59% year over year</a>, but almost all of the gain went to the most active teams. For the median team, main-branch throughput fell 7%, and success rates hit a five-year low. The report names validation as the industry's biggest bottleneck. <a href="https://blog.robbowley.net/2026/04/02/more-code-less-delivery-but-does-the-circleci-2026-report-really-show-1-in-20-teams-are-benefiting/">Critics note</a> it counts pipeline runs, not deployments, so the 59% measures activity, not shipped product.</p>
+        <p><strong>Most experiments do not produce a winner.</strong> <a href="https://www.visionary-marketing.co.uk/blog/ab-testing-statistics-2026">One analysis of 2,408 tests</a> run from January 2023 to March 2026 found 17.4% reached significance with a winner, and 35.8% were inconclusive. Vendor-reported rates run higher, for example Optimizely's 26.4% for the same period. The spread comes mostly from how each source defines a “win,” so compare definitions before comparing numbers. <a href="https://www.convertcart.com/insights/why-ab-testing-fails">Convertcart's analysis of 1,103 client experiments</a> reports 37% as statistically significant improvements.</p>
+        <p><strong>METR's follow-up did not produce a reliable speed measure (March 2026).</strong> METR's 2025 randomized trial of 16 experienced open-source developers <a href="https://leaddev.com/velocity/ai-doesnt-make-devs-as-productive-as-they-think-study-finds">found tasks took about 19% longer with AI tools</a>, while developers had expected them to be 24% faster. METR's larger follow-up, begun in August 2025, <a href="https://conffab.com/?p=10163">gave what it called an unreliable signal</a>. The main reason was that developers increasingly declined to work without AI. METR then ran a survey of 349 technical workers from February to April 2026.</p>
+        <p><strong>Stopping now has a formal test, though it comes from AI research.</strong> A <a href="https://arxiv.org/pdf/2603.27440">March 2026 paper on LLM coding agents</a> proposes a plateau rule: if two consecutive rounds improve the metric by less than 0.02, further refinement is unlikely to help. An <a href="https://arxiv.org/pdf/2608.10729">August 2026 arXiv paper on self-refining models</a> finds each round's gain shrinks while its cost grows roughly linearly, and argues the optimal stopping rule can reduce to a single threshold. Both papers study AI output, not product teams, so treat them as analogies.</p>
+        <p><strong>An agent can now run the whole experiment loop (AWS, undated).</strong> An <a href="https://aws.amazon.com/blogs/devops/automating-the-experimentation-lifecycle-with-kiro-aws-devops-agent-and-launchdarkly/">AWS DevOps blog post</a> describes an agent that writes a hypothesis, puts the change behind a feature flag, runs a 50/50 split on a slice of traffic, and rolls back automatically on regression, with the results feeding the next round. The automation covers the decide step. The post is a vendor walkthrough, not an independent test.</p>
+        <p>Nothing above tells a team when to stop. Each source measures the loop; the decision to stop is still a human call.</p>
+      </div>
+    </section>
 
     <section class="chapter" id="loop" aria-labelledby="loop-h">
       <div class="chapter-head reveal">
