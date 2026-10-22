@@ -1,4 +1,4 @@
-/* Never Done — behaviour. Plain JS, no dependencies. */
+/* Never Done — behavior. Plain JS, no dependencies. */
 (function () {
   "use strict";
 
